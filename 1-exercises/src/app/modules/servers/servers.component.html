@@ -20,9 +20,14 @@
   type="button"
   class="btn btn-primary"
   [disabled]="!canAddServer"
+  (click)="createServer()"
 >
   Add another server
 </button>
 
-<app-server></app-server>
-<app-server></app-server>
+<p *ngIf="isServerCreated; else noServer">Server has been created with name {{ firstServerName || secondServerName }}</p>
+<ng-template #noServer>
+  <p>No server has been created</p>
+</ng-template>
+
+<app-server *ngFor="let server of servers; let i"></app-server>
