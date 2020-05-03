@@ -1,0 +1,8 @@
+.row:first-of-type {
+  margin-bottom: 10px;
+}
+
+img.img-responsive {
+  max-width: 300px;
+  max-height: 300px;
+}

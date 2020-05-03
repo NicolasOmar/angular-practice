@@ -1,6 +1,11 @@
 # Angular Practice
 Repository created to record my practice learning Angular with exercises base on [Angular Course](https://www.udemy.com/course/the-complete-guide-to-angular-2/) of [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/).
 
+## Repo Structure
+For a better search, I divided the learned lessons in the following folders:
+- `1-exercises`: An app used to show every exercise outside the main project.
+- `2-project`: A single page application used to apply all the knowledge as the main project.
+
 ## Requirements
  - [Node](https://nodejs.org/en/download/) v12.16.1 or above
 
@@ -30,3 +35,4 @@ ng serve
  - How to handle the DOM using `Structural Directives` like `ngIf`
  - How to modify DOM styles using `ngStyle` and `ngClass`
  - How to render multiple times a child component using `ngFor`
+ - How to shape component's data using `Models`
