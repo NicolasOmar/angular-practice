@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular Practice';  
+  title: string = 'Angular exercises';
+  exercises: string[] = [
+    'First',
+    'Second',
+    'Third',
+    'Servers'
+  ]
+  selected: string = this.exercises[0]
+
+  changeAssignment = text => this.selected = text
 }

@@ -1,4 +1,26 @@
-<span>{{ title }} app is running!</span>
-<p>I am in the app component</p>
-
-<app-servers></app-servers>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="#" class="navbar-brand">{{ title }}</a>
+        <form class="form-inline">
+          <div class="btn-group">
+            <button
+              class="btn btn-outline-success"
+              *ngFor="let exc of exercises"
+              [ngClass]="{'active': exc === selected}"
+              (click)="changeAssignment(exc)">{{ exc }}</button>
+          </div>        
+        </form>      
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" [ngSwitch]="selected">
+      <app-first-assignment *ngSwitchCase="'First'"></app-first-assignment>
+      <app-second-assignment *ngSwitchCase="'Second'"></app-second-assignment>
+      <app-third-assignment *ngSwitchCase="'Third'"></app-third-assignment>
+      <app-servers *ngSwitchCase="'Servers'"></app-servers>
+    </div>
+  </div>
+</div>
