@@ -6,3 +6,19 @@
   <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
   <li>Starting a the 5th log item, give all future log item a blue background (via ngStyle) and white color (ngClass)</li>
 </ol>
+
+
+<form action="" class="form-inline">
+  <div class="form-group">
+    <button class="btn btn-primary" (click)="toogleSecretText()">Display Details</button>
+<p *ngIf="showSecretText">{{ secretText }}</p>
+  </div>
+</form>
+
+<p
+  *ngFor="let clickElement of timesClicked, let i"
+  [ngClass]="{'white-font': i > 4}"
+  [ngStyle]="{backgroundColor: getBackgroundColor(i)}"
+>
+  {{ clickElement }}
+</p>

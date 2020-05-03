@@ -5,3 +5,11 @@
   <li>Add a button which may only be clicked if the username is NOT an empty string</li>
   <li>Upon clicking the button, the susername should be reset to an empty string</li>
 </ol>
+
+<form action="" class="form-inline">
+  <div class="form-group">
+    <input type="text" name="userName" id="" class="form-control" [(ngModel)]="userName">
+  </div>
+  <button class="btn btn-success" [disabled]="userName.length === 0" (click)="clearName()">Log</button>
+</form>
+<p>{{ userName }}</p>

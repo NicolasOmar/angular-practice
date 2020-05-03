@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./second-assignment.component.css']
 })
 export class SecondAssignmentComponent implements OnInit {
+  userName: string = '';
 
   constructor() { }
+
+  clearName = () => this.userName = ''
 
   ngOnInit(): void {
   }

@@ -6,6 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./third-assignment.component.css']
 })
 export class ThirdAssignmentComponent implements OnInit {
+  secretText: string = 'Secret Password = tuna';
+  showSecretText: boolean = false;
+  timesClicked: number[] = [];
+
+  toogleSecretText = () => {
+    this.showSecretText = !this.showSecretText
+    this.timesClicked = [...this.timesClicked, ++this.timesClicked.length]
+  }
+
+  getBackgroundColor = number => number > 4 ? 'blue' : 'white'
 
   constructor() { }
 
