@@ -10,8 +10,11 @@ export class AppComponent {
   exercises: string[] = [
     'First',
     'Second',
-    'Third',
-    'Servers'
+    'Third'
+  ]
+  cases: string[] = [
+    'Servers',
+    'Types'
   ]
   selected: string = this.exercises[0]
 
