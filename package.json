@@ -4,10 +4,11 @@
   "description": "Repository created to record my practice learning Angular",
   "main": "index.js",
   "scripts": {
-    "setup-exercises": "cd ./1-exercises && npm i",
+    "setup-learning": "cd ./1-learning && npm i",
     "setup-project": "cd ./2-project && npm i",
     "setup-angular": "npm i -g @angular/cli",
-    "setup-all": "npm run setup-angular && npm run setup-exercises && npm run setup-project"
+    "setup-structure": "npm run setup-learning && npm run setup-project",
+    "setup-all": "npm run setup-angular && npm run setup-structure"
   },
   "repository": {
     "type": "git",

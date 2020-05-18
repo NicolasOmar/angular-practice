@@ -6,17 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = 'Angular exercises';
+  title: string = 'Angular Practice | Learning';
   exercises: string[] = [
     'First',
     'Second',
     'Third'
   ]
-  cases: string[] = [
+  examples: string[] = [
     'Servers',
     'Types'
   ]
   selected: string = this.exercises[0]
 
-  changeAssignment = text => this.selected = text
+  changeModule = text => this.selected = text
 }

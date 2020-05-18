@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="#" class="navbar-brand">{{ title }}</a>
+        <form class="form-inline">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Assignments</span>
+            </div>
+            <div class="btn-group mr-2">
+              <button
+                class="btn btn-outline-success"
+                *ngFor="let exc of exercises"
+                [ngClass]="{'active': exc === selected}"
+                (click)="changeModule(exc)">{{ exc }}</button>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Examples</span>
+            </div>
+            <div class="btn-group mr-2">
+              <button
+                class="btn btn-outline-primary"
+                *ngFor="let example of examples"
+                [ngClass]="{'active': example === selected}"
+                (click)="changeModule(example)">{{ example }}</button>
+            </div>
+          </div>
+        </form>      
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" [ngSwitch]="selected">
+      <app-first-assignment *ngSwitchCase="exercises[0]"></app-first-assignment>
+      <app-second-assignment *ngSwitchCase="exercises[1]"></app-second-assignment>
+      <app-third-assignment *ngSwitchCase="exercises[2]"></app-third-assignment>
+      <app-servers *ngSwitchCase="examples[0]"></app-servers>
+      <app-types *ngSwitchCase="examples[1]"></app-types>
+    </div>
+  </div>
+</div>
