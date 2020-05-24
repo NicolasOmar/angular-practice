@@ -1,16 +1,39 @@
 <div class="col-md-12">
   <p>Add new Servers or blueprints!</p>
+
   <label>Server Name</label>
-  <input type="text" class="form-control" [(ngModel)]="newServerName">
+  <!-- USING NG MODEL - TWO WAY BINDING -->
+  <!-- <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="newServerName"> -->
+
+  <!-- USING LOCAL REFERENCE -->
+  <input
+    type="text"
+    class="form-control"
+    #newServerName>
+
   <label>Server Content</label>
-  <input type="text" class="form-control" [(ngModel)]="newServerContent">
+  <!-- USING NG MODEL - TWO WAY BINDING -->
+  <!-- <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="newServerContent"> -->
+
+  <!-- USING LOCAL REFERENCE AND VIEW CHILD -->
+  <input
+    type="text"
+    class="form-control"
+    #newServerContent>
   <br>
+
   <div class="btn-group">
     <button
       class="btn btn-primary"
-      (click)="onAddServer()">Add Server</button>
+      (click)="onAddServer(newServerName)">Add Server</button>
     <button
       class="btn btn-success"
-      (click)="onAddBlueprint()">Add Server Blueprint</button>
+      (click)="onAddBlueprint(newServerName)">Add Server Blueprint</button>
   </div>
 </div>

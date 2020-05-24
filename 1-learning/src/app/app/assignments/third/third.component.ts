@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-third-assignment',
-  templateUrl: './third-assignment.component.html',
-  styleUrls: ['./third-assignment.component.css']
+  templateUrl: './third.component.html',
+  styleUrls: ['./third.component.css']
 })
 export class ThirdAssignmentComponent implements OnInit {
   secretText: string = 'Secret Password = tuna';

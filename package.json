@@ -7,8 +7,7 @@
     "setup-learning": "cd ./1-learning && npm i",
     "setup-project": "cd ./2-project && npm i",
     "setup-angular": "npm i -g @angular/cli",
-    "setup-structure": "npm run setup-learning && npm run setup-project",
-    "setup-all": "npm run setup-angular && npm run setup-structure"
+    "setup-all": "npm run setup-learning && npm run setup-project"
   },
   "repository": {
     "type": "git",

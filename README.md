@@ -8,15 +8,14 @@ For a better search, I divided all learned lessons in the following folders:
 
 ## Requirements
  - [Node](https://nodejs.org/en/download/) v12.16.1 or above
+ - [Angular CLI](https://cli.angular.io/) by running the command `npm run setup-angular` or `npm i -g @angular/cli`
 
 ## Setup
 | App Setup | Command |
 | ------ | ------ |
+| All | npm run setup-all |
 | Learning | npm run setup-learning |
 | Project | npm run setup-project |
-| Folders Only | npm run setup-structure |
-| Angular CLI Only | npm run-angular |
-| All | npm run setup-all |
 
 ## How to run it
 To run the app in a new browser instance, run the following command in the project´s folder:
@@ -37,5 +36,7 @@ ng serve
  - How to modify DOM styles using `ngStyle` and `ngClass`
  - How to render multiple times a child component using `ngFor`
  - How to shape component's data using `Models`
- - How to pass function between components using `Output`
+ - How to pass a function between components using `Output`
  - Basic understanding of `ViewEncapsulation`
+ - Using a `Local Reference` and `ViewChild` to access a Input value from the DOM
+ - Basic understanding of all `Lifecycle Hooks`

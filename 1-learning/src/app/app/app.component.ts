@@ -10,7 +10,8 @@ export class AppComponent {
   exercises: string[] = [
     'First',
     'Second',
-    'Third'
+    'Third',
+    'Fourth'
   ]
   examples: string[] = [
     'Servers',

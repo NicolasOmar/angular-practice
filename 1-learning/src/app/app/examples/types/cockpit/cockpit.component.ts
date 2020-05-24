@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-cockpit',
@@ -8,28 +8,32 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class CockpitComponent implements OnInit {
   @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
   @Output('bpCreated') blueprintCreated = new EventEmitter<{serverName: string, serverContent: string}>();
-  newServerName = '';
-  newServerContent = '';
+  // USING TWO WAY BINDING
+  // newServerName = '';
+  // newServerContent = '';
+  
+  // USING LOCAL REFERENCE AND VIEWCHILD
+  @ViewChild('newServerContent') newServerContent: ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onAddServer() {
+  onAddServer(newServerName: HTMLInputElement) {
     this.serverCreated.emit(
       {
-        serverName: this.newServerName,
-        serverContent: this.newServerContent
+        serverName: newServerName.value, // GETTING THE VALUE USING LOCAL REFERENCE ONLY
+        serverContent: this.newServerContent.nativeElement.value // GETTING THE VALUE USING LOCAL REFERENCE + VIEWCHILD
       }
     )
   }
 
-  onAddBlueprint() {
+  onAddBlueprint(newServerName: HTMLInputElement) {
     this.blueprintCreated.emit(
       {
-        serverName: this.newServerName,
-        serverContent: this.newServerContent
+        serverName: newServerName.value, // GETTING THE VALUE USING LOCAL REFERENCE ONLY
+        serverContent: this.newServerContent.nativeElement.value // GETTING THE VALUE USING LOCAL REFERENCE + VIEWCHILD
       }
     )
   }
