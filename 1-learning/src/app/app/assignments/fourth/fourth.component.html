@@ -6,6 +6,16 @@
   <li>The event should be listenable from outside the component</li>
   <li>When stopping the game, no more events should get emitted (clearInterval(ref))</li>
   <li>A new Odd component should get created for every odd number emitted, the same should happen for the Even Component (on even numbers)</li>
-  <li>Simply outpou Odd - NUMBER or Even - NUMBEr in the two components</li>
+  <li>Simply output Odd - NUMBER or Even - NUMBER in the two components</li>
   <li>Style the element (e.g. paragraph) holding your output text differently in both components</li>
 </ol>
+
+<app-game-control
+  (startGame)="toggleGame($event)"
+  (stopGame)="toggleGame($event)"
+></app-game-control>
+
+<div *ngFor="let number of numbers">
+  <app-even [number]="number" *ngIf="number % 2 === 0"></app-even>
+  <app-odd [number]="number" *ngIf="number % 2 !== 0"></app-odd>
+</div>
