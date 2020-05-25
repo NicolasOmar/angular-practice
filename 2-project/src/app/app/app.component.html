@@ -1,9 +1,13 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12">
-      <app-header></app-header>
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+    <div class="col-12">
+      <app-header
+        (changeSection)="changeSection($event)"
+      ></app-header>
+    </div>
+    <div class="col-12">
+      <app-recipes *ngIf="sectionOnScreen === 'recipes'"></app-recipes>
+      <app-shopping-list *ngIf="sectionOnScreen === 'shopping-list'"></app-shopping-list>
     </div>
   </div>
 </div>
