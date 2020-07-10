@@ -3,7 +3,7 @@ Repository created to record my practice learning Angular with exercises base on
 
 ## Repo Structure
 For a better search, I divided all learned lessons in the following folders:
-- `1-learning`: An app used to show every assignment and example outside the main project.
+- `1-learning`: An app used to show every assignment and example besides the main project.
 - `2-project`: A single page application used to apply all the knowledge as the main project.
 
 ## Requirements

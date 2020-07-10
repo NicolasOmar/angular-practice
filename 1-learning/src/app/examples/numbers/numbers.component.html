@@ -1,0 +1,6 @@
+<h2 class="text-center">Numbers Example</h2>
+
+<div *ngFor="let number of numbers">
+  <p class="odd" *ngIf="number % 2 !== 0">{{number}}</p>
+  <p appBasicHighlight *ngIf="number % 2 === 0">{{number}}</p>
+</div>

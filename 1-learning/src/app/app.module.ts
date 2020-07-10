@@ -1,22 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
-
+// COMPONENTS
 import { AppComponent } from './app/app.component';
-import { ServerComponent } from './app/examples/servers/server/server.component';
-import { ServersComponent } from './app/examples/servers/servers.component';
-import { TypesComponent } from './app/examples/types/types.component';
-import { FirstAssignmentComponent } from './app/assignments/first/first.component';
-import { SecondAssignmentComponent } from './app/assignments/second/second.component';
-import { ThirdAssignmentComponent } from './app/assignments/third/third.component';
-import { WarningAlertComponent } from './app/assignments/first/warning-alert/warning-alert.component';
-import { SuccessAlertComponent } from './app/assignments/first/success-alert/success-alert.component';
-import { CockpitComponent } from './app/examples/types/cockpit/cockpit.component';
-import { ServerElementComponent } from './app/examples/types/server-element/server-element.component';
-import { FourthComponent } from './app/assignments/fourth/fourth.component';
-import { GameControlComponent } from './app/assignments/fourth/game-control/game-control.component';
-import { OddComponent } from './app/assignments/fourth/odd/odd.component';
-import { EvenComponent } from './app/assignments/fourth/even/even.component';
+import { FirstAssignmentComponent } from './assignments/first/first.component';
+import { SecondAssignmentComponent } from './assignments/second/second.component';
+import { ThirdAssignmentComponent } from './assignments/third/third.component';
+import { WarningAlertComponent } from './assignments/first/warning-alert/warning-alert.component';
+import { SuccessAlertComponent } from './assignments/first/success-alert/success-alert.component';
+import { FourthComponent } from './assignments/fourth/fourth.component';
+import { GameControlComponent } from './assignments/fourth/game-control/game-control.component';
+import { OddComponent } from './assignments/fourth/odd/odd.component';
+import { EvenComponent } from './assignments/fourth/even/even.component';
+import { ServerComponent } from './examples/servers/server/server.component';
+import { ServersComponent } from './examples/servers/servers.component';
+import { NumbersComponent } from './examples/numbers/numbers.component';
+import { CockpitComponent } from './examples/types/cockpit/cockpit.component';
+import { TypesComponent } from './examples/types/types.component';
+import { ServerElementComponent } from './examples/types/server-element/server-element.component';
+// DIRECTIVES
+import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basic-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { EvenComponent } from './app/assignments/fourth/even/even.component';
     FourthComponent,
     GameControlComponent,
     OddComponent,
-    EvenComponent
+    EvenComponent,
+    NumbersComponent,
+    BasicHighlightDirective
   ],
   imports: [
     BrowserModule,

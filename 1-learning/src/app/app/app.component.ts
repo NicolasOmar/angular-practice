@@ -15,7 +15,8 @@ export class AppComponent {
   ]
   examples: string[] = [
     'Servers',
-    'Types'
+    'Types',
+    'Numbers'
   ]
   selected: string = this.exercises[0]
 
