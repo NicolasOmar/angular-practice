@@ -40,3 +40,4 @@ ng serve
  - Basic understanding of `ViewEncapsulation`
  - Using a `Local Reference` and `ViewChild` to access a Input value from the DOM
  - Basic understanding of all `Lifecycle Hooks`
+ - How to implement `Services` to handle data instead `PropertyBinding` & `EventBinding` between components.
