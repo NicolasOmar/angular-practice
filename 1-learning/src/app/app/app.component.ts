@@ -7,18 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Angular Practice | Learning';
-  exercises: string[] = [
+  assignments: string[] = [
     'First',
     'Second',
     'Third',
-    'Fourth'
+    'Fourth',
+    'Fifth'
   ]
   examples: string[] = [
     'Servers',
     'Types',
     'Numbers'
   ]
-  selected: string = this.exercises[0]
+  selected: string = this.assignments[0]
 
   changeModule = text => this.selected = text
 }

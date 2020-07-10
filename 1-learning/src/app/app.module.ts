@@ -12,6 +12,9 @@ import { FourthComponent } from './assignments/fourth/fourth.component';
 import { GameControlComponent } from './assignments/fourth/game-control/game-control.component';
 import { OddComponent } from './assignments/fourth/odd/odd.component';
 import { EvenComponent } from './assignments/fourth/even/even.component';
+import { FifthComponent } from './assignments/fifth/fifth.component';
+import { ActiveUsersComponent } from './assignments/fifth/active-users/active-users.component';
+import { InactiveUsersComponent } from './assignments/fifth/inactive-users/inactive-users.component';
 import { ServerComponent } from './examples/servers/server/server.component';
 import { ServersComponent } from './examples/servers/servers.component';
 import { NumbersComponent } from './examples/numbers/numbers.component';
@@ -20,6 +23,8 @@ import { TypesComponent } from './examples/types/types.component';
 import { ServerElementComponent } from './examples/types/server-element/server-element.component';
 // DIRECTIVES
 import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basic-highlight.directive';
+import { CounterService } from './assignments/fifth/services/counter.service';
+import { UserService } from './assignments/fifth/services/user.service';
 
 @NgModule({
   declarations: [
@@ -39,13 +44,19 @@ import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basi
     OddComponent,
     EvenComponent,
     NumbersComponent,
-    BasicHighlightDirective
+    BasicHighlightDirective,
+    FifthComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    CounterService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
