@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
-import { Routes, RouterModule } from '@angular/router';
-// COMPONENTS
+import { RouterModule } from '@angular/router';
+// ROUTING MODULE
+import { appRoutes } from './app-routing.module';
+// ASSIGNMENTS COMPONENTS
 import { AppComponent } from './app/app.component';
 import { FirstAssignmentComponent } from './assignments/first/first.component';
 import { SecondAssignmentComponent } from './assignments/second/second.component';
@@ -16,6 +18,7 @@ import { EvenComponent } from './assignments/fourth/even/even.component';
 import { FifthComponent } from './assignments/fifth/fifth.component';
 import { ActiveUsersComponent } from './assignments/fifth/active-users/active-users.component';
 import { InactiveUsersComponent } from './assignments/fifth/inactive-users/inactive-users.component';
+// EXAMPLES COMPONENTS
 import { ServerComponent } from './examples/servers/server/server.component';
 import { ServersComponent } from './examples/servers/servers.component';
 import { NumbersComponent } from './examples/numbers/numbers.component';
@@ -24,9 +27,9 @@ import { TypesComponent } from './examples/types/types.component';
 import { ServerElementComponent } from './examples/types/server-element/server-element.component';
 import { RoutesComponent } from './examples/routes/routes.component';
 import { HomeComponent } from './examples/routes/home/home.component';
-import { UsersComponent } from './examples/routes/users/users.component';
-import { RouteServersComponent } from './examples/routes/servers/servers.component';
+import { RouteUsersComponent } from './examples/routes/users/users.component';
 import { UserComponent } from './examples/routes/users/user/user.component';
+import { RouteServersComponent } from './examples/routes/servers/servers.component';
 import { EditServerComponent } from './examples/routes/servers/edit-server/edit-server.component';
 import { RouteServerComponent } from './examples/routes/servers/server/server.component';
 // DIRECTIVES
@@ -35,50 +38,6 @@ import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basi
 import { CounterService } from './assignments/fifth/services/counter.service';
 import { UserService } from './assignments/fifth/services/user.service';
 import { ServersService } from './examples/routes/servers/servers.service';
-
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: FirstAssignmentComponent
-  }, {
-    path: 'assignment',
-    children: [
-      {
-        path: 'first',
-        component: FirstAssignmentComponent
-      }, {
-        path: 'second',
-        component: SecondAssignmentComponent
-      }, {
-        path: 'third',
-        component: ThirdAssignmentComponent
-      }, {
-        path: 'fourth',
-        component: FourthComponent
-      }, {
-        path: 'fifth',
-        component: FifthComponent
-      }
-    ]
-  }, {
-    path: 'example',
-    children: [
-      {
-        path: 'servers',
-        component: ServersComponent
-      }, {
-        path: 'types',
-        component: TypesComponent
-      }, {
-        path: 'numbers',
-        component: NumbersComponent
-      }, {
-        path: 'routes',
-        component: RoutesComponent
-      }
-    ]
-  }
-]
 
 @NgModule({
   declarations: [
@@ -104,11 +63,12 @@ const appRoutes: Routes = [
     InactiveUsersComponent,
     RoutesComponent,
     HomeComponent,
-    UsersComponent,
+    RouteUsersComponent,
     RouteServersComponent,
     UserComponent,
     EditServerComponent,
-    RouteServerComponent
+    RouteServerComponent,
+    RoutesComponent
   ],
   imports: [
     BrowserModule,
