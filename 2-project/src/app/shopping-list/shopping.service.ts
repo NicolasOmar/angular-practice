@@ -32,6 +32,11 @@ export class ShoppingService {
     this.selectIngredient.emit(selected)
   }
 
+  public addRecipeIngredients(recipeIng: Array<Ingredient>) {
+    const composedArray = [...this.ingredients, ...recipeIng];
+    this.updateIngredients(composedArray);
+  }
+
   private updateIngredients(newIngredients: Array<Ingredient>) {
     this.addIngredient.emit(newIngredients);
     this.ingredients = newIngredients;
