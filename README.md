@@ -2,7 +2,7 @@
 Repository created to record my practice learning Angular with exercises base on [Angular Course](https://www.udemy.com/course/the-complete-guide-to-angular-2/) of [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/).
 
 ## Repo Structure
-For a better search, I divided all learned lessons in the following folders:
+For a better search, I divided the lessons I learned in the following folders:
 - `1-learning`: An app used to show every assignment and example besides the main project.
 - `2-project`: A single page application used to apply all the knowledge as the main project.
 
@@ -35,9 +35,10 @@ ng serve
  - How to handle the DOM using `Structural Directives` like `ngIf`
  - How to modify DOM styles using `ngStyle` and `ngClass`
  - How to render multiple times a child component using `ngFor`
- - How to shape component's data using `Models`
+ - How to shape a component's data using `Models`
  - How to pass a function between components using `Output`
  - Basic understanding of `ViewEncapsulation`
- - Using a `Local Reference` and `ViewChild` to access a Input value from the DOM
+ - Using a `Local Reference` and `ViewChild` to access an Input value from the DOM
  - Basic understanding of all `Lifecycle Hooks`
- - How to implement `Services` to handle data instead `PropertyBinding` & `EventBinding` between components.
+ - How to implement `Services` to handle data instead `PropertyBinding` & `EventBinding` between components
+ - How to create and handle `Routing` on the app

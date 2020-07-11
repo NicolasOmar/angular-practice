@@ -6,20 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = 'Angular Practice | Learning';
-  assignments: string[] = [
+  public title: string = 'Angular Practice | Learning';
+  public assignments: string[] = [
     'First',
     'Second',
     'Third',
     'Fourth',
     'Fifth'
-  ]
-  examples: string[] = [
+  ];
+  public examples: string[] = [
     'Servers',
     'Types',
-    'Numbers'
-  ]
-  selected: string = this.assignments[0]
+    'Numbers',
+    'Routes'
+  ];
 
-  changeModule = text => this.selected = text
+  constructor() {}
 }

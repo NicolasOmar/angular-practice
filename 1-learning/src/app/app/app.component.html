@@ -12,8 +12,11 @@
               <button
                 class="btn btn-outline-success"
                 *ngFor="let assign of assignments"
-                [ngClass]="{'active': assign === selected}"
-                (click)="changeModule(assign)">{{ assign }}</button>
+                [routerLink]="['/assignment', assign.toLowerCase()]"
+                routerLinkActive="active"
+              >
+                {{ assign }}
+              </button>
             </div>
           </div>
           
@@ -25,8 +28,11 @@
               <button
                 class="btn btn-outline-primary"
                 *ngFor="let example of examples"
-                [ngClass]="{'active': example === selected}"
-                (click)="changeModule(example)">{{ example }}</button>
+                [routerLink]="['/example', example.toLowerCase()]"
+                routerLinkActive="active"
+              >
+                {{ example }}
+              </button>
             </div>
           </div>
         </form>      
@@ -34,15 +40,6 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12" [ngSwitch]="selected">
-      <app-first-assignment *ngSwitchCase="assignments[0]"></app-first-assignment>
-      <app-second-assignment *ngSwitchCase="assignments[1]"></app-second-assignment>
-      <app-third-assignment *ngSwitchCase="assignments[2]"></app-third-assignment>
-      <app-fourth-assignment *ngSwitchCase="assignments[3]"></app-fourth-assignment>
-      <app-fifth-assignment *ngSwitchCase="assignments[4]"></app-fifth-assignment>
-      <app-servers *ngSwitchCase="examples[0]"></app-servers>
-      <app-types *ngSwitchCase="examples[1]"></app-types>
-      <app-numbers *ngSwitchCase="examples[2]"></app-numbers>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
