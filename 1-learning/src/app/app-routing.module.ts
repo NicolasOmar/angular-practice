@@ -11,8 +11,8 @@ import { TypesComponent } from "./examples/types/types.component";
 import { NumbersComponent } from "./examples/numbers/numbers.component";
 import { RoutesComponent } from "./examples/routes/routes.component";
 import { HomeComponent } from "./examples/routes/home/home.component";
-import { RouteServerComponent } from "./examples/routes/servers/server/server.component";
 import { RouteUsersComponent } from "./examples/routes/users/users.component";
+import { RouteServersComponent } from './examples/routes/servers/servers.component';
 
 export const appRoutes: Routes = [
   {
@@ -59,7 +59,7 @@ export const appRoutes: Routes = [
             component: HomeComponent
           }, {
             path: 'servers',
-            component: RouteServerComponent
+            component: RouteServersComponent
           }, {
             path: 'users',
             component: RouteUsersComponent

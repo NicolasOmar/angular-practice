@@ -1,14 +1,8 @@
-<h2 class="text-center">First Assignment</h2>
-<ol>
-  <li>Create two new Components (manually or with CLI): WarningAlert and SuccessAlert</li>
-  <li>Output them beneath each other in the Main Component</li>
-  <li>Output a warning or success message in the Component</li>
-  <li>Style the Components appropriately (maybe some red/green text?)</li>
-</ol>
-<ul>
-  <li>Use external or internal templates and styles!</li>
-  <li>Fell free to create more components, nest them into each other or play around with different types of selectors</li>
-</ul>
+<app-show-objectives
+  [title]="assignmentConfig.title"
+  [mainObjectives]="assignmentConfig.mainObjectives"
+  [secondaryObjectives]="assignmentConfig.secondaryObjectives"
+></app-show-objectives>
 
 <app-success-alert></app-success-alert>
 <app-warning-alert></app-warning-alert>

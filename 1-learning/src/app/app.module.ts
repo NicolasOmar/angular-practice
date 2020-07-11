@@ -4,8 +4,10 @@ import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router';
 // ROUTING MODULE
 import { appRoutes } from './app-routing.module';
+// CORE COMPONENTS
+import { AppComponent } from './core/app/app.component';
+import { ShowObjectivesComponent } from './core/show-objectives/show-objectives.component';
 // ASSIGNMENTS COMPONENTS
-import { AppComponent } from './app/app.component';
 import { FirstAssignmentComponent } from './assignments/first/first.component';
 import { SecondAssignmentComponent } from './assignments/second/second.component';
 import { ThirdAssignmentComponent } from './assignments/third/third.component';
@@ -68,7 +70,8 @@ import { ServersService } from './examples/routes/servers/servers.service';
     UserComponent,
     EditServerComponent,
     RouteServerComponent,
-    RoutesComponent
+    RoutesComponent,
+    ShowObjectivesComponent
   ],
   imports: [
     BrowserModule,
