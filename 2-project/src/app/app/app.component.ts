@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  sectionOnScreen: string = "recipes";
-
-  changeSection = text => this.sectionOnScreen = text
-
-  title = 'project';
+  constructor() {}
 }

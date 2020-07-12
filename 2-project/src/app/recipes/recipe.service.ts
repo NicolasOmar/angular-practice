@@ -35,8 +35,8 @@ export class RecipeService {
     return [...this.recipes];
   }
 
-  public selectRecipe(recipe: Recipe) {
-    this.selectedRecipe.emit(recipe)
+  public getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   public addIngredientsToShoppingList(ingredients: Array<Ingredient>) {
