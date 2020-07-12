@@ -2,6 +2,8 @@
   <div class="col-6">
     <div class="list-group">
       <a
+        [routerLink]="[server.id]"
+        [queryParams]="{ allowEdit: server.id === 3 }"
         href="#"
         class="list-group-item"
         *ngFor="let server of servers">
@@ -10,9 +12,7 @@
     </div>
   </div>
   <div class="col-6">
-    <app-edit-server></app-edit-server>
-    <hr>
-    <app-routes-server></app-routes-server>
+    <router-outlet></router-outlet>
   </div>
 </div>
 

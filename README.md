@@ -42,3 +42,8 @@ ng serve
  - Basic understanding of all `Lifecycle Hooks`
  - How to implement `Services` to handle data instead `PropertyBinding` & `EventBinding` between components
  - How to create and handle `Routing` on the app
+ - How to extend app navigation by adding `child routes`
+ - How to handle app navigation by the feature `programmable routing`
+ - How to include data on routes using `queryParams` and `fragments`
+ - How to handle wildard routes using `route redirection`.
+ - How to handle authentication based naviation using `guards`

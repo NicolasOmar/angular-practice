@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router';
 // ROUTING MODULE
-import { appRoutes } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 // CORE COMPONENTS
 import { AppComponent } from './core/app/app.component';
 import { ShowObjectivesComponent } from './core/show-objectives/show-objectives.component';
@@ -30,16 +29,20 @@ import { ServerElementComponent } from './examples/types/server-element/server-e
 import { RoutesComponent } from './examples/routes/routes.component';
 import { HomeComponent } from './examples/routes/home/home.component';
 import { RouteUsersComponent } from './examples/routes/users/users.component';
-import { UserComponent } from './examples/routes/users/user/user.component';
+import { RouteUserComponent } from './examples/routes/users/user/user.component';
 import { RouteServersComponent } from './examples/routes/servers/servers.component';
 import { EditServerComponent } from './examples/routes/servers/edit-server/edit-server.component';
 import { RouteServerComponent } from './examples/routes/servers/server/server.component';
 // DIRECTIVES
 import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basic-highlight.directive';
+// GUARDS
+import { AuthGuard } from './examples/routes/auth.guard';
 // SERVICES
 import { CounterService } from './assignments/fifth/services/counter.service';
 import { UserService } from './assignments/fifth/services/user.service';
 import { ServersService } from './examples/routes/servers/servers.service';
+import { PageNotFoundComponent } from './examples/routes/page-not-found/page-not-found.component';
+import { AuthService } from './examples/routes/auth.service';
 
 @NgModule({
   declarations: [
@@ -67,21 +70,24 @@ import { ServersService } from './examples/routes/servers/servers.service';
     HomeComponent,
     RouteUsersComponent,
     RouteServersComponent,
-    UserComponent,
+    RouteUserComponent,
     EditServerComponent,
     RouteServerComponent,
     RoutesComponent,
-    ShowObjectivesComponent
+    ShowObjectivesComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [
     CounterService,
     UserService,
-    ServersService
+    ServersService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

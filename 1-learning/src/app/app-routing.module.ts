@@ -1,4 +1,7 @@
-import { Routes } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from "@angular/router";
+// GUARD
+import { AuthGuard } from './examples/routes/auth.guard';
 // ASSIGNMENTS COMPONENTS
 import { FirstAssignmentComponent } from "./assignments/first/first.component";
 import { SecondAssignmentComponent } from "./assignments/second/second.component";
@@ -13,8 +16,12 @@ import { RoutesComponent } from "./examples/routes/routes.component";
 import { HomeComponent } from "./examples/routes/home/home.component";
 import { RouteUsersComponent } from "./examples/routes/users/users.component";
 import { RouteServersComponent } from './examples/routes/servers/servers.component';
+import { RouteUserComponent } from './examples/routes/users/user/user.component';
+import { RouteServerComponent } from './examples/routes/servers/server/server.component';
+import { EditServerComponent } from './examples/routes/servers/edit-server/edit-server.component';
+import { PageNotFoundComponent } from './examples/routes/page-not-found/page-not-found.component';
 
-export const appRoutes: Routes = [
+const appRoutes: Routes = [
   {
     path: '',
     component: FirstAssignmentComponent
@@ -59,13 +66,42 @@ export const appRoutes: Routes = [
             component: HomeComponent
           }, {
             path: 'servers',
-            component: RouteServersComponent
+            component: RouteServersComponent,
+            canActivateChild: [AuthGuard],
+            children: [
+              {
+                path: ':id',
+                component: RouteServerComponent
+              }, {
+                path: ':id/edit',
+                component: EditServerComponent
+              }
+            ]
           }, {
             path: 'users',
             component: RouteUsersComponent
-          },
+          }, {
+            path: 'users/:id/:name',
+            component: RouteUserComponent
+          }
         ]
       }
     ]
+  }, {
+    path: 'not-found',
+    component: PageNotFoundComponent
+  }, {
+    path: '**',
+    redirectTo: '/not-found'
   }
-]
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(appRoutes)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule {}
