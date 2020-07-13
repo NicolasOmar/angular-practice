@@ -20,6 +20,9 @@ import { RouteUserComponent } from './examples/routes/users/user/user.component'
 import { RouteServerComponent } from './examples/routes/servers/server/server.component';
 import { EditServerComponent } from './examples/routes/servers/edit-server/edit-server.component';
 import { PageNotFoundComponent } from './examples/routes/page-not-found/page-not-found.component';
+import { ObservablesComponent } from './examples/observables/observables.component';
+import { ObsHomeComponent } from './examples/observables/home/home.component';
+import { ObsUserComponent } from './examples/observables/user/user.component';
 
 const appRoutes: Routes = [
   {
@@ -83,6 +86,18 @@ const appRoutes: Routes = [
           }, {
             path: 'users/:id/:name',
             component: RouteUserComponent
+          }
+        ]
+      }, {
+        path: 'observables',
+        component: ObservablesComponent,
+        children: [
+          {
+            path: '',
+            component: ObsHomeComponent
+          }, {
+            path: 'user/:id',
+            component: ObsUserComponent
           }
         ]
       }

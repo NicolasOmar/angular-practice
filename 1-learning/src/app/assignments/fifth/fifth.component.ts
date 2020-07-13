@@ -9,7 +9,11 @@ import { CounterService } from './services/counter.service';
 export class FifthComponent {
   public assignmentConfig = {
     title: 'Fifth Assignment',
-    mainObjectives: [],
+    mainObjectives: [
+      'Based on this base project, move the working features into services (removing event and property binding)',
+      'Add a UserService to merge and optimize the existing methods into that service',
+      'Add a counter services to count how many times the you switch users status and output the number into the app'
+    ],
   };
 
   constructor(

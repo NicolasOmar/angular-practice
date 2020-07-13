@@ -43,6 +43,9 @@ import { UserService } from './assignments/fifth/services/user.service';
 import { ServersService } from './examples/routes/servers/servers.service';
 import { PageNotFoundComponent } from './examples/routes/page-not-found/page-not-found.component';
 import { AuthService } from './examples/routes/auth.service';
+import { ObservablesComponent } from './examples/observables/observables.component';
+import { ObsHomeComponent } from './examples/observables/home/home.component';
+import { ObsUserComponent } from './examples/observables/user/user.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +78,10 @@ import { AuthService } from './examples/routes/auth.service';
     RouteServerComponent,
     RoutesComponent,
     ShowObjectivesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ObservablesComponent,
+    ObsHomeComponent,
+    ObsUserComponent
   ],
   imports: [
     BrowserModule,
