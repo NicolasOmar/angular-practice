@@ -13,6 +13,8 @@
   </div>
 </div>
 <hr />
+<p *ngIf="userActivated">User Activated</p>
+<hr *ngIf="userActivated" />
 <div class="row">
   <div class="col-12">
     <router-outlet></router-outlet>

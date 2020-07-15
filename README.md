@@ -47,4 +47,5 @@ ng serve
  - How to include data on routes using `queryParams` and `fragments`
  - How to handle wilcard routes using `route redirection`.
  - How to handle authentication based navigation using `Guards`
- - Basic understanding of `Observables`
+ - Basic understanding of `Observables` and operators like `filter` or `map`
+ - How to handle cross-component logic by using a `Subject`

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ObservableUserService } from './user.service';
 
 @Component({
   selector: 'app-observables',
@@ -6,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./observables.component.css']
 })
 export class ObservablesComponent implements OnInit {
-  constructor() {}
+  public userActivated: boolean = false;
 
-  ngOnInit() {}
+  constructor(
+    private userService: ObservableUserService
+  ) {}
+
+  ngOnInit() {
+    this.userService.userActivated.subscribe(
+      (hasBeenActivated: boolean) => this.userActivated = hasBeenActivated
+    )
+  }
 }

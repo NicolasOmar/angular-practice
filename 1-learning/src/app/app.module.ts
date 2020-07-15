@@ -46,6 +46,7 @@ import { AuthService } from './examples/routes/auth.service';
 import { ObservablesComponent } from './examples/observables/observables.component';
 import { ObsHomeComponent } from './examples/observables/home/home.component';
 import { ObsUserComponent } from './examples/observables/user/user.component';
+import { ObservableUserService } from './examples/observables/user.service';
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { ObsUserComponent } from './examples/observables/user/user.component';
     UserService,
     ServersService,
     AuthService,
+    ObservableUserService,
     AuthGuard
   ],
   bootstrap: [AppComponent]
