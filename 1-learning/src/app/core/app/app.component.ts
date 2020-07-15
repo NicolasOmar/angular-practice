@@ -19,7 +19,8 @@ export class AppComponent {
     'Types',
     'Numbers',
     'Routes',
-    'Observables'
+    'Observables',
+    'Forms'
   ];
 
   constructor() {}

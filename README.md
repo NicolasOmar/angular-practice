@@ -29,23 +29,33 @@ ng serve
 
 ## What did I learn?
  - Basic understanding of a `Component`
- - How to use a `Decorator` to declare a Component
- - Understand what `String Interpolation` is
+   - How to use a `Decorator` to declare a Component
+   - Understand and use `String Interpolation`
  - How to use `PropertyBinding`, `DataBinding` (using in one-way or two-way) and `EventBinding`
- - How to handle the DOM using `Structural Directives` like `ngIf`
- - How to modify DOM styles using `ngStyle` and `ngClass`
- - How to render multiple times a child component using `ngFor`
- - How to shape a component's data using `Models`
- - How to pass a function between components using `Output`
- - Basic understanding of `ViewEncapsulation`
- - Using a `Local Reference` and `ViewChild` to access an Input value from the DOM
- - Basic understanding of all `Lifecycle Hooks`
- - How to implement `Services` to handle data instead `PropertyBinding` & `EventBinding` between components
- - How to create and handle `Routing` on the app
- - How to extend app navigation by adding `child routes`
- - How to handle app navigation in Components using `programmable routing`
- - How to include data on routes using `queryParams` and `fragments`
- - How to handle wilcard routes using `route redirection`.
- - How to handle authentication based navigation using `Guards`
- - Basic understanding of `Observables` and operators like `filter` or `map`
- - How to improve `EventEmitter` pattern on Services using `Subject` pattern
+ - How to handle the DOM using `Structural Directives`
+   - Handle DOM display using `ngIf`
+   - Modify DOM styles using `ngStyle` and `ngClass`
+   - Render multiple times a child component using `ngFor`
+ - Use component approach to have a better project structure
+   - hape a component's data using `Models`
+    - Pass data between components using `Input`
+    - Pass methods between components using `Output`
+    - Basic understanding of `ViewEncapsulation` to handle styling scoping
+    - Use `Local Reference` and `ViewChild` to access an Input value from the DOM
+ - Brief understanding of `Lifecycle Hooks`
+ - Implement `Services` to handle data instead `PropertyBinding` & `EventBinding` between components
+ - Implement `Routing` on the app
+   - Extend app navigation by adding `child routes`
+   - Handle app navigation in Components using `programmable routing`
+   - Include data on routes using `queryParams` and `fragments`
+   - Handle wilcard routes using `route redirection`.
+   - Add authentication based navigation using `Guards`
+   - Create a `Routing Module` to isolate routing logic in a separated file
+ - Basic understanding of `Observables`
+   - Handle values using operators like `filter` or `map`
+   - Improve `EventEmitter Approach` on Services using `Subject`
+ - How to handle Forms using `Template-driven Approach`
+   - How to bind form data in DOM and component
+   - Add `Validation` and reflect it in the DOM
+   - Use `Property binding` to set a default value
+   - Handle a group of inputs in a `FormGroup`

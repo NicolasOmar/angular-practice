@@ -33,6 +33,11 @@ import { RouteUserComponent } from './examples/routes/users/user/user.component'
 import { RouteServersComponent } from './examples/routes/servers/servers.component';
 import { EditServerComponent } from './examples/routes/servers/edit-server/edit-server.component';
 import { RouteServerComponent } from './examples/routes/servers/server/server.component';
+import { PageNotFoundComponent } from './examples/routes/page-not-found/page-not-found.component';
+import { ObservablesComponent } from './examples/observables/observables.component';
+import { ObsHomeComponent } from './examples/observables/home/home.component';
+import { ObsUserComponent } from './examples/observables/user/user.component';
+import { FormComponent } from './examples/forms/form.component';
 // DIRECTIVES
 import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basic-highlight.directive';
 // GUARDS
@@ -41,11 +46,7 @@ import { AuthGuard } from './examples/routes/auth.guard';
 import { CounterService } from './assignments/fifth/services/counter.service';
 import { UserService } from './assignments/fifth/services/user.service';
 import { ServersService } from './examples/routes/servers/servers.service';
-import { PageNotFoundComponent } from './examples/routes/page-not-found/page-not-found.component';
 import { AuthService } from './examples/routes/auth.service';
-import { ObservablesComponent } from './examples/observables/observables.component';
-import { ObsHomeComponent } from './examples/observables/home/home.component';
-import { ObsUserComponent } from './examples/observables/user/user.component';
 import { ObservableUserService } from './examples/observables/user.service';
 
 @NgModule({
@@ -82,7 +83,8 @@ import { ObservableUserService } from './examples/observables/user.service';
     PageNotFoundComponent,
     ObservablesComponent,
     ObsHomeComponent,
-    ObsUserComponent
+    ObsUserComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

@@ -23,6 +23,7 @@ import { PageNotFoundComponent } from './examples/routes/page-not-found/page-not
 import { ObservablesComponent } from './examples/observables/observables.component';
 import { ObsHomeComponent } from './examples/observables/home/home.component';
 import { ObsUserComponent } from './examples/observables/user/user.component';
+import { FormComponent } from './examples/forms/form.component';
 
 const appRoutes: Routes = [
   {
@@ -100,6 +101,9 @@ const appRoutes: Routes = [
             component: ObsUserComponent
           }
         ]
+      }, {
+        path: 'forms',
+        component: FormComponent
       }
     ]
   }, {
