@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 // SERVICES
 import { RecipeService } from '../recipe.service';
 // MODELS
@@ -10,7 +11,8 @@ import { Recipe } from '../../shared/models/recipe.model';
   templateUrl: './recipe-detail.component.html',
   styleUrls: ['./recipe-detail.component.css']
 })
-export class RecipeDetailComponent implements OnInit {
+export class RecipeDetailComponent implements OnInit, OnDestroy {
+  private sub: Subscription;
   public selectedRecipe: Recipe;
 
   constructor(
@@ -20,7 +22,7 @@ export class RecipeDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(
+    this.sub = this.route.params.subscribe(
       ({ id }) => this.selectedRecipe = this.recipeService.getRecipe(+id)
     )
   }
@@ -35,4 +37,8 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   public deleteRecipe() {}
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }

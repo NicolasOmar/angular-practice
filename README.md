@@ -48,4 +48,4 @@ ng serve
  - How to handle wilcard routes using `route redirection`.
  - How to handle authentication based navigation using `Guards`
  - Basic understanding of `Observables` and operators like `filter` or `map`
- - How to handle cross-component logic by using a `Subject`
+ - How to improve `EventEmitter` pattern on Services using `Subject` pattern

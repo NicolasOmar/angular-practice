@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 // SERVICES
 import { RecipeService } from './recipe.service';
 // MODELS
@@ -10,7 +11,8 @@ import { Recipe } from '../shared/models/recipe.model';
   styleUrls: ['./recipes.component.css'],
   providers: [RecipeService]
 })
-export class RecipesComponent implements OnInit {
+export class RecipesComponent implements OnInit, OnDestroy {
+  private sub: Subscription;
   public selectedRecipe: Recipe;
 
   constructor(
@@ -18,9 +20,12 @@ export class RecipesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.recipeService.selectedRecipe.subscribe(
+    this.sub = this.recipeService.selectedRecipe.subscribe(
       (recipeSelection: Recipe) => this.selectedRecipe = recipeSelection
     )
   }
 
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }

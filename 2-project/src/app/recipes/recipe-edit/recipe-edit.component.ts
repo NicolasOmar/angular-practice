@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-edit',
   templateUrl: './recipe-edit.component.html',
   styleUrls: ['./recipe-edit.component.css']
 })
-export class RecipeEditComponent implements OnInit {
+export class RecipeEditComponent implements OnInit, OnDestroy {
+  private sub: Subscription;
   public id: number;
   public editMode: boolean;
 
@@ -15,9 +17,12 @@ export class RecipeEditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(
+    this.sub = this.route.params.subscribe(
       ({ id }) => this.id = +id
     )
   }
 
+  ngOnDestroy() {
+    this.sub.unsubscribe
+  }
 }
