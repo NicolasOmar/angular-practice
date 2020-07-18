@@ -38,6 +38,8 @@ import { ObservablesComponent } from './examples/observables/observables.compone
 import { ObsHomeComponent } from './examples/observables/home/home.component';
 import { ObsUserComponent } from './examples/observables/user/user.component';
 import { FormComponent } from './examples/forms/form.component';
+import { TemplateFormComponent } from './examples/forms/template-form/template-form.component';
+import { ReactiveFormComponent } from './examples/forms/reactive-form/reactive-form.component';
 // DIRECTIVES
 import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basic-highlight.directive';
 // GUARDS
@@ -86,7 +88,9 @@ import { SixthComponent } from './assignments/sixth/sixth.component';
     ObsHomeComponent,
     ObsUserComponent,
     FormComponent,
-    SixthComponent
+    SixthComponent,
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,

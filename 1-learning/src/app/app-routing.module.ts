@@ -25,6 +25,8 @@ import { ObsHomeComponent } from './examples/observables/home/home.component';
 import { ObsUserComponent } from './examples/observables/user/user.component';
 import { FormComponent } from './examples/forms/form.component';
 import { SixthComponent } from './assignments/sixth/sixth.component';
+import { TemplateFormComponent } from './examples/forms/template-form/template-form.component';
+import { ReactiveFormComponent } from './examples/forms/reactive-form/reactive-form.component';
 
 const appRoutes: Routes = [
   {
@@ -107,7 +109,16 @@ const appRoutes: Routes = [
         ]
       }, {
         path: 'forms',
-        component: FormComponent
+        component: FormComponent,
+        children: [
+          {
+            path: 'template',
+            component: TemplateFormComponent
+          }, {
+            path: 'reactive',
+            component: ReactiveFormComponent
+          }
+        ]
       }
     ]
   }, {
