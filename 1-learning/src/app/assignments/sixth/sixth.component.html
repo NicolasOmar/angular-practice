@@ -1,0 +1,52 @@
+<app-show-objectives
+  [title]="assignmentConfig.title"
+  [mainObjectives]="assignmentConfig.mainObjectives"
+  [secondaryObjectives]="assignmentConfig.secondaryObjectives"
+></app-show-objectives>
+
+<div class="row">
+  <div class="col-12">
+    <form (ngSubmit)="onFormSubmit()" #sixthForm="ngForm">
+      <div class="form-group">
+        <label for="emailAddress">Email: </label>
+        <input
+          type="email"
+          class="form-control"
+          name="emailAddress"
+          ngModel
+          required
+          email>
+      </div>
+
+      <div class="form-group">
+        <label for="subscription">Subscription: </label>
+        <select name="subscription" class="form-control" [ngModel]="subscriptions[1]">
+          <option *ngFor="let sub of subscriptions" [value]="sub">{{ sub }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="userPassword">Password: </label>
+        <input
+          type="password"
+          class="form-control"
+          name="userPassword"
+          ngModel
+          required>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!sixthForm.valid">
+        Submit Form
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="row result-row" *ngIf="formResult">
+  <div class="col-12">
+    <h2>Form results</h2>
+    <p>Email: {{ formResult.emailAddress }}</p>
+    <p>Subscription: {{ formResult.subscription }}</p>
+    <p>Password: {{ formResult.userPassword }}</p>
+  </div>
+</div>

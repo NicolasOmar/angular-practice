@@ -24,6 +24,7 @@ import { ObservablesComponent } from './examples/observables/observables.compone
 import { ObsHomeComponent } from './examples/observables/home/home.component';
 import { ObsUserComponent } from './examples/observables/user/user.component';
 import { FormComponent } from './examples/forms/form.component';
+import { SixthComponent } from './assignments/sixth/sixth.component';
 
 const appRoutes: Routes = [
   {
@@ -47,6 +48,9 @@ const appRoutes: Routes = [
       }, {
         path: 'fifth',
         component: FifthComponent
+      }, {
+        path: 'sixth',
+        component: SixthComponent
       }
     ]
   }, {

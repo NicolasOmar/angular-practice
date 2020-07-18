@@ -48,6 +48,7 @@ import { UserService } from './assignments/fifth/services/user.service';
 import { ServersService } from './examples/routes/servers/servers.service';
 import { AuthService } from './examples/routes/auth.service';
 import { ObservableUserService } from './examples/observables/user.service';
+import { SixthComponent } from './assignments/sixth/sixth.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { ObservableUserService } from './examples/observables/user.service';
     ObservablesComponent,
     ObsHomeComponent,
     ObsUserComponent,
-    FormComponent
+    FormComponent,
+    SixthComponent
   ],
   imports: [
     BrowserModule,
