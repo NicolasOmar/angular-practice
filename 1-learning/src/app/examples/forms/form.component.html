@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group">
-          <button class="btn btn-info" type="button">Suggest an Username</button>
+          <button class="btn btn-info" type="button" (click)="suggestUserName(formData)">Suggest an Username</button>
         </div>
 
         <div class="form-group">
@@ -58,9 +58,8 @@
           <option value="teacher">Your first teacher?</option>
         </select>
       </div>
-      
+
       <div class="form-group">
-        <label for="secret">Secret Reply</label>
         <textarea
           cols="30"
           rows="10"
@@ -70,6 +69,7 @@
         </textarea>
         <span class="help-block">Your reply: {{answer}}</span>
       </div>
+      
       <button
         class="btn btn-primary"
         type="submit"
@@ -77,5 +77,14 @@
         Submit
       </button>
     </form>
+  </div>
+
+  <hr *ngIf="data" />
+  
+  <div *ngIf="data" class="col-12">
+    <h4>Your Data</h4>
+    <p *ngFor="let item of data">
+      {{ item.name }}: {{ item.value}}
+    </p>
   </div>
 </div>

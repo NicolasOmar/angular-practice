@@ -11,19 +11,38 @@ export class FormComponent {
   // @ViewChild('formData') formData: NgForm;
 
   public answer = '';
-  public genders = ['Male', 'Female', 'Other']
+  public genders = ['Male', 'Female', 'Other'];
+  public data;
 
-  public suggestUserName() {
-    const suggestedName = 'Superuser';
+  public suggestUserName(formData: NgForm) {
+    const suggestedUser = {
+      username: 'Superuser',
+      email: 'super@user.com',
+      gender: 'Other',
+      querstionAnswer: 'My black cat, "Felix"'
+    };
+
+    formData.form.patchValue(suggestedUser)
   }
 
   // USING TEMPLATE APPROACH
   public onSubmit(formData: NgForm) {
-    console.warn(formData.controls)
+    this.data = this.returnFormData(formData.controls);
   }
 
   // USING VIEWCHILD ALTERNATIVE
   // public onSubmit() {
   //   console.warn(this.formData)
   // }
+
+  public returnFormData(formData) {
+    return Object.keys(formData).map(
+      key => {
+        return {
+          name: key,
+          value: formData[key].value
+        }
+      }
+    )
+  }
 }
