@@ -1,0 +1,44 @@
+<app-show-objectives
+  [title]="assignmentConfig.title"
+  [mainObjectives]="assignmentConfig.mainObjectives"
+  [secondaryObjectives]="assignmentConfig.secondaryObjectives"
+></app-show-objectives>
+
+<div class="row">
+  <form class="col-12" (submit)="onSubmit()" [formGroup]="seventhFormGroup">
+    <div class="form-group">
+      <label for="">Project Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="projectName">
+    </div>
+    <div class="form-group">
+      <label for="">Mail</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="">Project Status</label>
+      <select class="form-control" formControlName="projectStatus">
+        <option *ngFor="let status of statusList" [value]="status">{{ status }}</option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!seventhFormGroup.valid">
+      Submit Form
+    </button>
+  </form>
+
+  <div *ngIf="formDataObject" class="col-12 form-data-column">
+    <h4>Your Data</h4>
+    <p *ngFor="let item of formDataObject">
+      {{ item.name }}: {{ item.value}}
+    </p>
+  </div>
+</div>

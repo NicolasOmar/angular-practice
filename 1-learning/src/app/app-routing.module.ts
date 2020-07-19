@@ -8,6 +8,8 @@ import { SecondAssignmentComponent } from "./assignments/second/second.component
 import { ThirdAssignmentComponent } from "./assignments/third/third.component";
 import { FourthComponent } from "./assignments/fourth/fourth.component";
 import { FifthComponent } from "./assignments/fifth/fifth.component";
+import { SixthComponent } from './assignments/sixth/sixth.component';
+import { SeventhComponent } from './assignments/seventh/seventh.component';
 // EXAMPLES COMPONENTS
 import { ServersComponent } from "./examples/servers/servers.component";
 import { TypesComponent } from "./examples/types/types.component";
@@ -24,7 +26,6 @@ import { ObservablesComponent } from './examples/observables/observables.compone
 import { ObsHomeComponent } from './examples/observables/home/home.component';
 import { ObsUserComponent } from './examples/observables/user/user.component';
 import { FormComponent } from './examples/forms/form.component';
-import { SixthComponent } from './assignments/sixth/sixth.component';
 import { TemplateFormComponent } from './examples/forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './examples/forms/reactive-form/reactive-form.component';
 
@@ -53,6 +54,9 @@ const appRoutes: Routes = [
       }, {
         path: 'sixth',
         component: SixthComponent
+      }, {
+        path: 'seventh',
+        component: SeventhComponent
       }
     ]
   }, {

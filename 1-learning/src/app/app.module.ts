@@ -20,6 +20,7 @@ import { FifthComponent } from './assignments/fifth/fifth.component';
 import { ActiveUsersComponent } from './assignments/fifth/active-users/active-users.component';
 import { InactiveUsersComponent } from './assignments/fifth/inactive-users/inactive-users.component';
 import { SixthComponent } from './assignments/sixth/sixth.component';
+import { SeventhComponent } from './assignments/seventh/seventh.component';
 // EXAMPLES COMPONENTS
 import { ServerComponent } from './examples/servers/server/server.component';
 import { ServersComponent } from './examples/servers/servers.component';
@@ -90,7 +91,8 @@ import { ObservableUserService } from './examples/observables/user.service';
     FormComponent,
     SixthComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    SeventhComponent
   ],
   imports: [
     BrowserModule,

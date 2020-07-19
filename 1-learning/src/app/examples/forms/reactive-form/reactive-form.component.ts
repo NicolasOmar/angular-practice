@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class ReactiveFormComponent implements OnInit {
   private forbiddenNamesArray = ['Chris', 'Anna'];
-  public signupForm: FormGroup;
   public genders = ['Male', 'Female', 'Other'];
   public secretQuestions = [{
       value: 'pet',
@@ -19,6 +18,7 @@ export class ReactiveFormComponent implements OnInit {
       text: 'Your first teacher?'
     }
   ];
+  public signupForm: FormGroup;
   public formDataObject;
 
   constructor() { }
@@ -36,8 +36,21 @@ export class ReactiveFormComponent implements OnInit {
     })
   }
 
+  public onSubmit() {
+    if (this.signupForm.valid) {
+      this.formDataObject = this.returnFormData(this.signupForm.getRawValue());
+    }
+  }
+
   public suggestUserName() {
-    this.formDataObject = this.returnFormData(this.signupForm.getRawValue());
+    const suggestedUser = {
+      username: 'Superuser',
+      email: 'super@user.com',
+      gender: 'Other',
+      querstionAnswer: 'My black cat, "Felix"'
+    };
+    
+    this.signupForm.patchValue(suggestedUser)
   }
 
   public addNewHobbie() {
@@ -45,7 +58,7 @@ export class ReactiveFormComponent implements OnInit {
     (this.signupForm.controls.hobbies as FormArray).push(control)
   }
 
-  public returnFormData(formData) {
+  private returnFormData(formData) {
     return Object.keys(formData).map(
       key => {
         return {

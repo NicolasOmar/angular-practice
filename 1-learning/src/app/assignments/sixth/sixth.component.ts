@@ -14,9 +14,6 @@ interface formData {
 })
 export class SixthComponent implements OnInit {
   @ViewChild('sixthForm') sixthForm: NgForm;
-  public formResult: formData;
-  public subscriptions = ['Basic', 'Advanced', 'Pro'];
-
   public assignmentConfig = {
     title: 'Sixth Assignment',
     mainObjectives: [
@@ -29,8 +26,10 @@ export class SixthComponent implements OnInit {
       'A Dropdown which allows the user to select from three different Subscriptions ("Basic", "Advanced", "Pro") -> Set "Advanced" as Default',
       'A Password field (should not be empty)',
     ]
-  }
-
+  };
+  public subscriptions = ['Basic', 'Advanced', 'Pro'];
+  public formResult: formData;
+  
   constructor() { }
 
   ngOnInit(): void {

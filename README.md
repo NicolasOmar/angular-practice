@@ -22,7 +22,7 @@ To run the app in a new browser instance, run the following command in the proje
 ```sh
 npm start
 ```
-In case you stopped the Angular service and don´t want to open a new tab, run the following command:
+In case you stopped the Angular service and don't want to open a new tab, run the following command:
 ```sh
 ng serve
 ```
@@ -37,25 +37,29 @@ ng serve
    - Modify DOM styles using `ngStyle` and `ngClass`
    - Render multiple times a child component using `ngFor`
  - Use component approach to have a better project structure
-   - hape a component's data using `Models`
+   - Shape a component's data using `Models`
     - Pass data between components using `Input`
     - Pass methods between components using `Output`
     - Basic understanding of `ViewEncapsulation` to handle styling scoping
     - Use `Local Reference` and `ViewChild` to access an Input value from the DOM
- - Brief understanding of `Lifecycle Hooks`
+ - A brief understanding of `Lifecycle Hooks`
  - Implement `Services` to handle data instead `PropertyBinding` & `EventBinding` between components
  - Implement `Routing` on the app
    - Extend app navigation by adding `child routes`
    - Handle app navigation in Components using `programmable routing`
    - Include data on routes using `queryParams` and `fragments`
-   - Handle wilcard routes using `route redirection`.
+   - Handle wildcard routes using `route redirection`.
    - Add authentication based navigation using `Guards`
    - Create a `Routing Module` to isolate routing logic in a separated file
  - Basic understanding of `Observables`
    - Handle values using operators like `filter` or `map`
    - Improve `EventEmitter Approach` on Services using `Subject`
- - How to handle Forms using `Template-driven Approach`
+ - How to handle Forms using `Template-driven approach`
    - How to bind form data in DOM and component
    - Add `Validation` and reflect it in the DOM
    - Use `Property binding` to set a default value
    - Handle a group of inputs in a `FormGroup`
+ - How to handle Forms using `Reactive approach`
+   - Create a form structure using `FormGroup` and `FormControl` to  bind it in the DOM
+   - Integrate provided and custom `Validators` for sync and async cases
+   - Add inputs dynamically using `FormArray`
