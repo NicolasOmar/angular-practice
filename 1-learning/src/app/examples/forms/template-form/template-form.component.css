@@ -1,0 +1,7 @@
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.form-data-column {
+  margin-top: 30px;
+}

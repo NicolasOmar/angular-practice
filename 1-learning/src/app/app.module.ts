@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 // ROUTING MODULE
 import { AppRoutingModule } from './app-routing.module';
 // CORE COMPONENTS
@@ -19,6 +19,7 @@ import { EvenComponent } from './assignments/fourth/even/even.component';
 import { FifthComponent } from './assignments/fifth/fifth.component';
 import { ActiveUsersComponent } from './assignments/fifth/active-users/active-users.component';
 import { InactiveUsersComponent } from './assignments/fifth/inactive-users/inactive-users.component';
+import { SixthComponent } from './assignments/sixth/sixth.component';
 // EXAMPLES COMPONENTS
 import { ServerComponent } from './examples/servers/server/server.component';
 import { ServersComponent } from './examples/servers/servers.component';
@@ -50,7 +51,6 @@ import { UserService } from './assignments/fifth/services/user.service';
 import { ServersService } from './examples/routes/servers/servers.service';
 import { AuthService } from './examples/routes/auth.service';
 import { ObservableUserService } from './examples/observables/user.service';
-import { SixthComponent } from './assignments/sixth/sixth.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +95,8 @@ import { SixthComponent } from './assignments/sixth/sixth.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     CounterService,

@@ -76,12 +76,10 @@
       </button>
     </form>
   </div>
-
-  <hr *ngIf="data" />
   
-  <div *ngIf="data" class="col-12">
+  <div *ngIf="formDataObject" class="col-12 form-data-column">
     <h4>Your Data</h4>
-    <p *ngFor="let item of data">
+    <p *ngFor="let item of formDataObject">
       {{ item.name }}: {{ item.value}}
     </p>
   </div>

@@ -12,7 +12,7 @@ export class TemplateFormComponent {
 
   public answer = '';
   public genders = ['Male', 'Female', 'Other'];
-  public data;
+  public formDataObject;
 
   public suggestUserName(formData: NgForm) {
     const suggestedUser = {
@@ -27,7 +27,7 @@ export class TemplateFormComponent {
 
   // USING TEMPLATE APPROACH
   public onSubmit(formData: NgForm) {
-    this.data = this.returnFormData(formData.controls);
+    this.formDataObject = this.returnFormData(formData.controls);
   }
 
   // USING VIEWCHILD ALTERNATIVE

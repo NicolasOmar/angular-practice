@@ -1,1 +1,92 @@
-<p>reactive-form works!</p>
+<div class="row">
+  <div class="col-12">
+    <form [formGroup]="signupForm">
+      <div id="user-data">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="username">
+          <p
+            *ngIf="signupForm.controls.username.errors && signupForm.controls.username.errors.nameIsForbidden">
+            This name is invald, pelase try other ones.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-info" type="button" (click)="suggestUserName()">
+            Suggest an Username
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Mail</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Gender</label>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input type="radio" formControlName="gender" [value]="gender">
+            {{ gender }}
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="secret">Secret Questions</label>
+        <select class="form-control" formControlName="secret">
+          <option *ngFor="let question of secretQuestions" [value]="question.value">
+            {{ question.text }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <textarea
+          cols="30"
+          rows="10"
+          class="form-control"
+          formControlName="questionAnswer">
+        </textarea>
+        <span class="help-block">Your reply: {{ signupForm.controls.questionAnswer.value }}</span>
+      </div>
+
+      <div class="form-group" formArrayName="hobbies">
+        <div class="row">
+          <div class="col-6">
+            <label for="">Hobbies:</label>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-info" (click)="addNewHobbie()">Add Hobby</button>
+          </div>
+          <div
+            class="col-12 control-array"
+            *ngFor="let hobbyControl of signupForm.get('hobbies')['controls']; let i = index">
+            <input type="text" class="form-control" [formControlName]="i">
+          </div>
+        </div>
+      </div>
+      
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!signupForm.valid">
+        Submit
+      </button>
+    </form>
+  </div>
+  
+  <div *ngIf="formDataObject" class="col-12 form-data-column">
+    <h4>Your Data</h4>
+    <p *ngFor="let item of formDataObject">
+      {{ item.name }}: {{ item.value}}
+    </p>
+  </div>
+</div>
