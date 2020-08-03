@@ -64,9 +64,9 @@ ng serve
    - Integrate provided and custom `Validators` for sync and async cases
    - Add inputs dynamically using `FormArray`
 
-## Version (currently 0.13.0)
+## Version (currently 0.14.0)
 | Number | Meaning |
 | ------ | ------ |
 | 0 | Course has been not completed |
-| 13 | How many assignments/examples i have completed |
+| 14 | How many assignments/examples i have completed |
 | 0 | How many times i have updated the next assignment/example |

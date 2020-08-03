@@ -13,6 +13,7 @@ import { Recipe } from '../../shared/models/recipe.model';
 })
 export class RecipeDetailComponent implements OnInit, OnDestroy {
   private sub: Subscription;
+  private recipeId: number;
   public selectedRecipe: Recipe;
 
   constructor(
@@ -23,7 +24,10 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(
-      ({ id }) => this.selectedRecipe = this.recipeService.getRecipe(+id)
+      ({ id }) => {
+        this.recipeId = +id;
+        this.selectedRecipe = this.recipeService.getRecipe(+id)
+      }
     )
   }
 
@@ -32,11 +36,14 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
     this.router.navigate(['/shopping-list']);
   }
 
-  public editRecipe() {
+  public onEditRecipe() {
     this.router.navigate(['edit'], { relativeTo: this.route })
   }
 
-  public deleteRecipe() {}
+  public onDeleteRecipe() {
+    this.recipeService.deteleRecipe(this.recipeId);
+    this.router.navigate(['../'], { relativeTo: this.route });
+  }
 
   ngOnDestroy() {
     this.sub.unsubscribe();

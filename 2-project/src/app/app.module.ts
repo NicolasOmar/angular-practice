@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // MODULES
 import { AppRoutingModule } from './app-routing.module';
 // START COMPONENTS
@@ -18,6 +18,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 // SERVICES
 import { ShoppingService } from './shopping-list/shopping.service';
+import { RecipeService } from './recipes/recipe.service';
 // DIRECTIVES
 import { DropdownDirective } from './shared/directives/dropdown.directive';
 
@@ -38,9 +39,13 @@ import { DropdownDirective } from './shared/directives/dropdown.directive';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [ShoppingService],
+  providers: [
+    ShoppingService,
+    RecipeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
