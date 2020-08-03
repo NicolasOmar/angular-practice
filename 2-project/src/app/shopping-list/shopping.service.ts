@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 // MODELS
 import { Ingredient } from '../shared/models/ingredient.model';
@@ -13,6 +13,7 @@ export class ShoppingService {
   ];
   public addIngredient = new Subject<Array<Ingredient>>();
   public selectIngredient = new Subject<Ingredient>();
+  public startedEdition = new Subject<number>();
   
   constructor() { }
 
@@ -25,9 +26,18 @@ export class ShoppingService {
     this.updateIngredients(updatedArray);
   }
 
-  public onDeleteIngredient(selected: Ingredient) {
-    const reducedArray = this.ingredients.filter(item => item.name !== selected.name);
+  public updateIngredient(index: number, newIngredient: Ingredient) {
+    this.ingredients[index] = newIngredient;
+    this.updateIngredients([...this.ingredients])
+  }
+
+  public deleteIngredient(index: number) {
+    const reducedArray = this.ingredients.filter((item, i) => i !== index);
     this.updateIngredients(reducedArray);
+  }
+
+  public getIngredient(index: number) {
+    return this.ingredients[index]
   }
 
   public onSelectIngredient(selected: Ingredient) {
