@@ -28,6 +28,7 @@ import { ObsUserComponent } from './examples/observables/user/user.component';
 import { FormComponent } from './examples/forms/form.component';
 import { TemplateFormComponent } from './examples/forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './examples/forms/reactive-form/reactive-form.component';
+import { PipesComponent } from './examples/pipes/pipes.component';
 
 const appRoutes: Routes = [
   {
@@ -123,6 +124,9 @@ const appRoutes: Routes = [
             component: ReactiveFormComponent
           }
         ]
+      }, {
+        path: 'pipes',
+        component: PipesComponent
       }
     ]
   }, {

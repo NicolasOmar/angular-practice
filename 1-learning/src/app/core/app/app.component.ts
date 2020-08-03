@@ -22,7 +22,8 @@ export class AppComponent {
     'Numbers',
     'Routes',
     'Observables',
-    'Forms'
+    'Forms',
+    'Pipes'
   ];
 
   constructor() {}

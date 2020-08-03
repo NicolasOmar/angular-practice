@@ -1,0 +1,27 @@
+<h2 class="text-center">Pipes Example</h2>
+
+<div class="row">
+  <div class="col-12">
+    <input
+      type="text"
+      name="search"
+      id="search"
+      class="form-control"
+      [(ngModel)]="filteredStatus">
+
+    <p>App status: <strong>{{ appStatus | async }}</strong></p>
+
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let server of servers | filter : filteredStatus : 'status'"
+        [ngClass]="getStatusClasses(server)">
+        <strong>{{ server.name | shorten }}</strong> | {{ server.instanceType | uppercase }} | {{ server.started | date: 'fullDate' | uppercase }}
+        
+        <span class="badge badge-pill badge-dark">
+          {{ server.status }}
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

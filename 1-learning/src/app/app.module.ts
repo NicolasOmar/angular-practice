@@ -42,8 +42,12 @@ import { ObsUserComponent } from './examples/observables/user/user.component';
 import { FormComponent } from './examples/forms/form.component';
 import { TemplateFormComponent } from './examples/forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './examples/forms/reactive-form/reactive-form.component';
+import { PipesComponent } from './examples/pipes/pipes.component';
 // DIRECTIVES
 import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basic-highlight.directive';
+// PIPES
+import { ShortenPipe } from './examples/pipes/shorten.pipe';
+import { FilterPipe } from './examples/pipes/filter.pipe';
 // GUARDS
 import { AuthGuard } from './examples/routes/auth.guard';
 // SERVICES
@@ -92,7 +96,10 @@ import { ObservableUserService } from './examples/observables/user.service';
     SixthComponent,
     TemplateFormComponent,
     ReactiveFormComponent,
-    SeventhComponent
+    SeventhComponent,
+    PipesComponent,
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

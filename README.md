@@ -18,7 +18,7 @@ For a better search, I divided the lessons I learned in the following folders:
 | Project | npm run setup-project |
 
 ## How to run it
-To run the app in a new browser instance, run the following command in the project´s folder:
+To run the app in a new browser instance, run the following command in the project's folder:
 ```sh
 npm start
 ```
@@ -62,11 +62,15 @@ ng serve
  - How to handle Forms using `Reactive approach`
    - Create a form structure using `FormGroup` and `FormControl` to  bind it in the DOM
    - Integrate provided and custom `Validators` for sync and async cases
-   - Add inputs dynamically using `FormArray`
+   - Handle multiple inputs dynamically using `FormArray`
+ - How to handle DOM outputs using `Pipes`
+   - Use built-in cases like `date` or `uppercase` and configure them
+   - Create a custom pipe and implement it
+   - Basic understanding of handle asynchronous data with `async` pipe
 
-## Version (currently 0.14.0)
+## Version (currently 0.15.0)
 | Number | Meaning |
 | ------ | ------ |
-| 0 | Course has been not completed |
-| 14 | How many assignments/examples i have completed |
-| 0 | How many times i have updated the next assignment/example |
+| 0 | Course hasn't been completed |
+| 15 | How many assignments/examples I have completed |
+| 0 | How many times I have updated the next assignment/example |
