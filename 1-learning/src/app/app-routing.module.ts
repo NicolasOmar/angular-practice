@@ -30,6 +30,7 @@ import { FormComponent } from './examples/forms/form.component';
 import { TemplateFormComponent } from './examples/forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './examples/forms/reactive-form/reactive-form.component';
 import { PipesComponent } from './examples/pipes/pipes.component';
+import { ApiComponent } from './examples/api/api.component';
 
 const appRoutes: Routes = [
   {
@@ -131,6 +132,9 @@ const appRoutes: Routes = [
       }, {
         path: 'pipes',
         component: PipesComponent
+      }, {
+        path: 'api',
+        component: ApiComponent
       }
     ]
   }, {

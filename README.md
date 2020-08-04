@@ -67,10 +67,13 @@ ng serve
    - Use built-in cases like `date` or `uppercase` and configure them
    - Create a custom pipe and implement it
    - Basic understanding of handle asynchronous data with `async` pipe
+ - How to handle an API-Rest
+   - Basic understanding and usage of [Firebase](firebase.google.com)
+   - How to use the `HttpModule`
 
-## Version (currently 0.16.0)
+## Version (currently 0.16.1)
 | Number | Meaning |
 | ------ | ------ |
 | 0 | Course hasn't been completed |
 | 16 | How many assignments/examples I have completed |
-| 0 | How many times I have updated the next assignment/example |
+| 1 | How many times I have updated the next assignment/example |

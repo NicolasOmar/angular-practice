@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 // ROUTING MODULE
 import { AppRoutingModule } from './app-routing.module';
 // CORE COMPONENTS
@@ -44,6 +45,7 @@ import { FormComponent } from './examples/forms/form.component';
 import { TemplateFormComponent } from './examples/forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './examples/forms/reactive-form/reactive-form.component';
 import { PipesComponent } from './examples/pipes/pipes.component';
+import { ApiComponent } from './examples/api/api.component';
 // DIRECTIVES
 import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basic-highlight.directive';
 // PIPES
@@ -105,13 +107,15 @@ import { ObservableUserService } from './examples/observables/user.service';
     FilterPipe,
     EightComponent,
     SortPipe,
-    ReversePipe
+    ReversePipe,
+    ApiComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     CounterService,
