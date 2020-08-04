@@ -68,9 +68,9 @@ ng serve
    - Create a custom pipe and implement it
    - Basic understanding of handle asynchronous data with `async` pipe
 
-## Version (currently 0.15.0)
+## Version (currently 0.16.0)
 | Number | Meaning |
 | ------ | ------ |
 | 0 | Course hasn't been completed |
-| 15 | How many assignments/examples I have completed |
+| 16 | How many assignments/examples I have completed |
 | 0 | How many times I have updated the next assignment/example |

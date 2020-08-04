@@ -14,7 +14,8 @@ export class AppComponent {
     'Fourth',
     'Fifth',
     'Sixth',
-    'Seventh'
+    'Seventh',
+    'Eight'
   ];
   public examples: string[] = [
     'Servers',

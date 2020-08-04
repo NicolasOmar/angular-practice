@@ -10,6 +10,7 @@ import { FourthComponent } from "./assignments/fourth/fourth.component";
 import { FifthComponent } from "./assignments/fifth/fifth.component";
 import { SixthComponent } from './assignments/sixth/sixth.component';
 import { SeventhComponent } from './assignments/seventh/seventh.component';
+import { EightComponent } from './assignments/eight/eight.component';
 // EXAMPLES COMPONENTS
 import { ServersComponent } from "./examples/servers/servers.component";
 import { TypesComponent } from "./examples/types/types.component";
@@ -58,6 +59,9 @@ const appRoutes: Routes = [
       }, {
         path: 'seventh',
         component: SeventhComponent
+      }, {
+        path: 'eight',
+        component: EightComponent
       }
     ]
   }, {

@@ -1,0 +1,34 @@
+<app-show-objectives
+  [title]="assignmentConfig.title"
+  [mainObjectives]="assignmentConfig.mainObjectives"
+></app-show-objectives>
+
+<div class="row">
+  <div class="col-12">
+    <div class="input-group">
+      <input type="text" class="form-control" [(ngModel)]="filteredStatus">
+      <div class="input-group-append">
+        <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+      </div>
+    </div>
+
+    <br>
+    
+    <h2>App Status: {{ appStatus | async }}</h2>
+    <hr>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let server of servers | sort"
+        [ngClass]="getStatusClasses(server)">
+        <span
+          class="badge">
+          {{ server.status }}
+        </span>
+        <strong>{{ server.name | reverse }}</strong> |
+        {{ server.instanceType | uppercase }} |
+        {{ server.started | date:'fullDate' | uppercase }}
+      </li>
+    </ul>
+  </div>
+</div>

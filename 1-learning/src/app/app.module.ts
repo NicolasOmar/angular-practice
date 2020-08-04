@@ -21,6 +21,7 @@ import { ActiveUsersComponent } from './assignments/fifth/active-users/active-us
 import { InactiveUsersComponent } from './assignments/fifth/inactive-users/inactive-users.component';
 import { SixthComponent } from './assignments/sixth/sixth.component';
 import { SeventhComponent } from './assignments/seventh/seventh.component';
+import { EightComponent } from './assignments/eight/eight.component';
 // EXAMPLES COMPONENTS
 import { ServerComponent } from './examples/servers/server/server.component';
 import { ServersComponent } from './examples/servers/servers.component';
@@ -48,6 +49,8 @@ import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basi
 // PIPES
 import { ShortenPipe } from './examples/pipes/shorten.pipe';
 import { FilterPipe } from './examples/pipes/filter.pipe';
+import { SortPipe } from './assignments/eight/sort.pipe';
+import { ReversePipe } from './assignments/eight/reverse.pipe';
 // GUARDS
 import { AuthGuard } from './examples/routes/auth.guard';
 // SERVICES
@@ -99,7 +102,10 @@ import { ObservableUserService } from './examples/observables/user.service';
     SeventhComponent,
     PipesComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    EightComponent,
+    SortPipe,
+    ReversePipe
   ],
   imports: [
     BrowserModule,
