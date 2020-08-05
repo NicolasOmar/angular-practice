@@ -67,10 +67,10 @@ ng serve
    - Use built-in cases like `date` or `uppercase` and configure them
    - Create a custom pipe and implement it
    - Basic understanding of handle asynchronous data with `async` pipe
- - How to handle an API-Rest
+ - How to make request to an API
    - Basic understanding and usage of [Firebase](firebase.google.com)
    - How to use the `HttpModule` and methods `post`, `get` and `delete`.
-   - Format response data before observable subscription using `map` function
+   - Format response data before send observable subscription using `pipe`, `map` and `tap` function
    - Handle errors using `catchError` and `throwError` functions
    - Add `headers` and `params` values in any API call
    - Intercept API requests and responses using an `Interceptor`

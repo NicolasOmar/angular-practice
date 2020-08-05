@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 // MODULES
 import { AppRoutingModule } from './app-routing.module';
 // START COMPONENTS
 import { AppComponent } from './app/app.component';
 import { HeaderComponent } from './header/header.component';
+// OTHER COMPONENTS
+import { AuthComponent } from './auth/auth.component';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 // RECIPES COMPONETS
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
@@ -20,6 +23,8 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 // SERVICES
 import { ShoppingService } from './shopping-list/shopping.service';
 import { RecipeService } from './recipes/recipe.service';
+// INTERCEPTORS
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 // DIRECTIVES
 import { DropdownDirective } from './shared/directives/dropdown.directive';
 
@@ -35,7 +40,9 @@ import { DropdownDirective } from './shared/directives/dropdown.directive';
     ShoppingEditComponent,
     DropdownDirective,
     RecipeDisplayComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    AuthComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,11 @@ import { DropdownDirective } from './shared/directives/dropdown.directive';
   ],
   providers: [
     ShoppingService,
-    RecipeService
+    RecipeService, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

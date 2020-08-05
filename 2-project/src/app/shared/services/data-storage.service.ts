@@ -33,5 +33,6 @@ export class DataStorageService {
         })),
         tap(response => this.recipeService.setRecipes(response))
       )
+      .subscribe(() => null)
   }
 }

@@ -1,3 +1,7 @@
 .navbar-nav {
   width: 100%;
 }
+
+.navbar-nav.dropdown {
+  justify-content: flex-end;
+}

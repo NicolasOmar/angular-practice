@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div class="d-flex justify-content-center">
+      <spinner *ngIf="isLoading"></spinner>
+    </div>
+    
+    <div class="alert alert-danger" *ngIf="errorMsg">
+      <p>{{ errorMsg }}</p>
+    </div>
+
+    <form [formGroup]="authForm" (submit)="onSubmitForm()" *ngIf="!isLoading">
+      <div class="form-group">
+        <label for="">E-Mail</label>
+        <input type="email" class="form-control" formControlName="email">
+      </div>
+      
+      <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!authForm.valid"
+      >
+        {{ isLogged ? 'Login' : 'Sign Up' }}
+      </button>
+       | 
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="onSwitchMode()"
+      >
+        Switch to {{ isLogged ? 'Sign Up' : 'Login' }} Mode
+      </button>
+    </form>
+  </div>
+</div>

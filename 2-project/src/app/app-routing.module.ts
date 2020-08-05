@@ -6,14 +6,18 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipeDisplayComponent } from './recipes/recipe-display/recipe-display.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { AuthComponent } from './auth/auth.component';
 // RESOLVERS
 import { RecipeResolverService } from './recipes/recipe-resolver.service';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/recipes',
+    redirectTo: '/auth',
     pathMatch: 'full'
+  }, {
+    path: 'auth',
+    component: AuthComponent
   }, {
     path: 'recipes',
     component: RecipesComponent,
