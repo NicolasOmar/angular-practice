@@ -69,11 +69,15 @@ ng serve
    - Basic understanding of handle asynchronous data with `async` pipe
  - How to handle an API-Rest
    - Basic understanding and usage of [Firebase](firebase.google.com)
-   - How to use the `HttpModule`
+   - How to use the `HttpModule` and methods `post`, `get` and `delete`.
+   - Format response data before observable subscription using `map` function
+   - Handle errors using `catchError` and `throwError` functions
+   - Add `headers` and `params` values in any API call
+   - Intercept API requests and responses using an `Interceptor`
 
-## Version (currently 0.16.1)
+## Version (currently 0.17.0)
 | Number | Meaning |
 | ------ | ------ |
 | 0 | Course hasn't been completed |
-| 16 | How many assignments/examples I have completed |
-| 1 | How many times I have updated the next assignment/example |
+| 17 | How many assignments/examples I have completed |
+| 0 | How many times I have updated the next assignment/example |

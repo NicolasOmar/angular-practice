@@ -4,38 +4,40 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a href="#" class="navbar-brand">{{ title }}</a>
         <form class="form-inline">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Assignments</span>
-            </div>
-            <div class="btn-group mr-2">
-              <button
-                class="btn btn-outline-success"
+          <div class="dropdown" angular-dropdown>
+            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Assignments
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <a
+                class="dropdown-item"
+                href="#"
                 *ngFor="let assign of assignments"
                 [routerLink]="['/assignment', assign.toLowerCase()]"
                 routerLinkActive="active"
               >
                 {{ assign }}
-              </button>
+              </a>
             </div>
           </div>
-          
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Examples</span>
-            </div>
-            <div class="btn-group mr-2">
-              <button
-                class="btn btn-outline-primary"
+
+          <div class="dropdown" angular-dropdown>
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Examples
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <a
+                class="dropdown-item"
+                href="#"
                 *ngFor="let example of examples"
                 [routerLink]="['/example', example.toLowerCase()]"
                 routerLinkActive="active"
               >
                 {{ example }}
-              </button>
+              </a>
             </div>
           </div>
-        </form>      
+        </form>
       </nav>
     </div>
   </div>

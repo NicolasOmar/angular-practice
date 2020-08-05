@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+// SERVICES
+import { PostsService } from './posts.service';
 
 @Component({
   selector: 'app-api',
@@ -7,11 +8,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./api.component.css']
 })
 export class ApiComponent implements OnInit {
-  private url = 'https://angular-api-7f672.firebaseio.com/posts.json';
   public loadedPosts = [];
+  public error = null;
 
   constructor(
-    private http: HttpClient
+    private postService: PostsService
   ) { }
 
   ngOnInit(): void {
@@ -19,25 +20,23 @@ export class ApiComponent implements OnInit {
   }
 
   onCreatePost(postData: { title: string; content: string }) {
-    this.http.post(this.url, postData)
-      .subscribe(response => {
-        console.log(response);
-      });
+    this.postService.createAndStore(postData.title, postData.content);
   }
 
   onFetchPosts() {
-    this.http.get(this.url).subscribe(response => {
-      this.loadedPosts = Object.keys(response).map(key => {
-        return {
-          ...response[key],
-          key
-        }
-      });
-      console.warn(this.loadedPosts)
-    })
+    this.postService.fetchPosts()
+      .subscribe(
+        response => this.loadedPosts = response,
+        error => this.error = error.message
+      );
   }
 
   onClearPosts() {
-    // Send Http request
+    this.postService.clearPosts()
+      .subscribe(() => this.loadedPosts = [])
+  }
+
+  clearError() {
+    this.error = null
   }
 }

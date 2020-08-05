@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 // ROUTING MODULE
 import { AppRoutingModule } from './app-routing.module';
 // CORE COMPONENTS
@@ -48,6 +48,7 @@ import { PipesComponent } from './examples/pipes/pipes.component';
 import { ApiComponent } from './examples/api/api.component';
 // DIRECTIVES
 import { BasicHighlightDirective } from './examples/numbers/basic-highlight/basic-highlight.directive';
+import { DropdownDirective } from './core/app/droppdown.directive';
 // PIPES
 import { ShortenPipe } from './examples/pipes/shorten.pipe';
 import { FilterPipe } from './examples/pipes/filter.pipe';
@@ -61,6 +62,7 @@ import { UserService } from './assignments/fifth/services/user.service';
 import { ServersService } from './examples/routes/servers/servers.service';
 import { AuthService } from './examples/routes/auth.service';
 import { ObservableUserService } from './examples/observables/user.service';
+import { AuthInterceptorService } from './examples/api/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -108,7 +110,8 @@ import { ObservableUserService } from './examples/observables/user.service';
     EightComponent,
     SortPipe,
     ReversePipe,
-    ApiComponent
+    ApiComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
@@ -123,7 +126,12 @@ import { ObservableUserService } from './examples/observables/user.service';
     ServersService,
     AuthService,
     ObservableUserService,
-    AuthGuard
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
