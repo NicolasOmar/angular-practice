@@ -74,6 +74,7 @@ ng serve
    - Handle errors using `catchError` and `throwError` functions
    - Add `headers` and `params` values in any API call
    - Intercept API requests and responses using an `Interceptor`
+   - Handle API calls when user is reloading the page using a `Resolver`
 
 ## Version (currently 0.17.0)
 | Number | Meaning |

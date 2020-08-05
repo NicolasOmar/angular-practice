@@ -10,26 +10,8 @@ import { Ingredient } from '../shared/models/ingredient.model';
   providedIn: 'root'
 })
 export class RecipeService {
-  private recipes: Recipe[] = [
-    new Recipe(
-      'First recipe',
-      'A new recipe',
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/20190503-delish-pineapple-baked-salmon-horizontal-ehg-450-1557771120.jpg',
-      [
-        new Ingredient('Meat', 22),
-        new Ingredient('Pineaple', 15)
-      ]
-    ),
-    new Recipe(
-      'Second recipe',
-      'A repeated recipe',
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/20190503-delish-pineapple-baked-salmon-horizontal-ehg-450-1557771120.jpg',
-      [
-        new Ingredient('Meat', 10)
-      ]
-    )
-  ];
-  public recipesChanges = new BehaviorSubject<Array<Recipe>>(this.recipes);
+  private recipes: Recipe[] = [];
+  public recipesChanges = new BehaviorSubject<Array<Recipe>>([]);
   public selectedRecipe = new Subject<Recipe>();
 
   constructor(
@@ -51,8 +33,16 @@ export class RecipeService {
     this.updateChanges(reducedRecipes)
   }
 
+  public getRecipes() {
+    return [...this.recipes];
+  }
+
   public getRecipe(index: number) {
     return this.recipes[index];
+  }
+
+  public setRecipes(recipes: Array<Recipe>) {
+    this.updateChanges(recipes)
   }
 
   public addIngredientsToShoppingList(ingredients: Array<Ingredient>) {
