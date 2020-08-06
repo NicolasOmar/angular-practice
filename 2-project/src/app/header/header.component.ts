@@ -16,9 +16,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       label: 'Recipes',
       link: 'recipes'
     }, {
-      label: 'Authenticate',
-      link: 'auth'
-    }, {
       label: 'Shopping List',
       link: 'shopping-list'
     }

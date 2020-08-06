@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
+  private tokenExpirationTimer: any;
   private url = 'https://identitytoolkit.googleapis.com/v1';
   private apiKey = 'AIzaSyCp6thaLrZwItBnZB6hkEqFql7ijhp76LM';
   public user = new BehaviorSubject<User>(null);
@@ -57,15 +58,27 @@ export class AuthService {
       )
 
       if (loadedUser.token) {
-        this.user.next(loadedUser)
+        this.user.next(loadedUser);
+        const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime()
+        this.autoLogout(expirationDuration);
       }
     }
   }
 
   public logOut() {
-    this.user.next(null)
-    this.setLocalUser(null)
-    this.router.navigate(['/auth'])
+    this.user.next(null);
+    localStorage.removeItem('userData');
+
+    if (this.tokenExpirationTimer) {
+      clearTimeout(this.tokenExpirationTimer)
+    }
+    this.tokenExpirationTimer = null;
+
+    this.router.navigate(['/auth']);
+  }
+
+  public autoLogout(expirationDuration: number) {
+    this.tokenExpirationTimer = setTimeout(() => this.logOut(), expirationDuration)
   }
 
   private encodeUrl(serviceUrl: string) {
@@ -91,7 +104,8 @@ export class AuthService {
   ) {
     const expiredDate = new Date(new Date().getTime() + (expiresIn * 1000))
     const user = new User(email, userId, token, expiredDate);
-    this.user.next(user)
+    this.user.next(user);
+    this.autoLogout(expiresIn * 1000);
     this.setLocalUser(user);
   }
 

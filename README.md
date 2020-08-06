@@ -76,9 +76,9 @@ ng serve
    - Intercept API requests and responses using an `Interceptor`
    - Handle API calls when user is reloading the page using a `Resolver`
 
-## Version (currently 0.17.0)
+## Version (currently 0.18.0)
 | Number | Meaning |
 | ------ | ------ |
 | 0 | Course hasn't been completed |
-| 17 | How many assignments/examples I have completed |
+| 18 | How many assignments/examples I have completed |
 | 0 | How many times I have updated the next assignment/example |
