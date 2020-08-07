@@ -1,9 +1,9 @@
-interface AuthDataBody {
+export interface AuthDataBody {
   email: string,
   password: string
 }
 
-interface AuthDataResponse {
+export interface AuthDataResponse {
   idToken: string,
   email: string,
   refreshToken: string,
@@ -12,7 +12,7 @@ interface AuthDataResponse {
   registered?: boolean
 }
 
-interface AuthLocalData {
+export interface AuthLocalData {
   email: string,
   id: string,
   _token: string,

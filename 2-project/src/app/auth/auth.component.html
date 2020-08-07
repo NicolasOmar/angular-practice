@@ -1,11 +1,7 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center" appPlaceholder>
   <div class="col-8">
     <div class="d-flex justify-content-center">
       <spinner *ngIf="isLoading"></spinner>
-    </div>
-    
-    <div class="alert alert-danger" *ngIf="errorMsg">
-      <p>{{ errorMsg }}</p>
     </div>
 
     <form [formGroup]="authForm" (submit)="onSubmitForm()" *ngIf="!isLoading">

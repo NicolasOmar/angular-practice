@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 // OTHER COMPONENTS
 import { AuthComponent } from './auth/auth.component';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
 // RECIPES COMPONETS
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
@@ -27,6 +28,7 @@ import { RecipeService } from './recipes/recipe.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 // DIRECTIVES
 import { DropdownDirective } from './shared/directives/dropdown.directive';
+import { PlaceholderDirective } from './shared/directives/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { DropdownDirective } from './shared/directives/dropdown.directive';
     RecipeDisplayComponent,
     RecipeEditComponent,
     AuthComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    AlertComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,

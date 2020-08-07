@@ -70,11 +70,18 @@ ng serve
  - How to make request to an API
    - Basic understanding and usage of [Firebase](firebase.google.com)
    - How to use the `HttpModule` and methods `post`, `get` and `delete`.
-   - Format response data before send observable subscription using `pipe`, `map` and `tap` function
+   - Format response data before send observable subscription using `pipe`, `map` and `tap` operators
    - Handle errors using `catchError` and `throwError` functions
    - Add `headers` and `params` values in any API call
    - Intercept API requests and responses using an `Interceptor`
    - Handle API calls when user is reloading the page using a `Resolver`
+ - How to handle user authentication
+   - Use `enums` to list posible error in a file
+   - Storage session data thougt `sessionStorage`
+   - Learn more useful rxjs operators like `take`, `throwError` and `exhaustMap`
+ - Load `Dynamics Components` via code (imperatively)
+   - Use a `ComponentFactoryResolver` to create the component from the Typescript side
+ - How to use `environments variables` to store sensible keys when you deploy your app
 
 ## Version (currently 0.18.0)
 | Number | Meaning |

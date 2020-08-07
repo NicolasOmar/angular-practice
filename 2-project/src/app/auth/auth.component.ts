@@ -1,24 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, ViewChild, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from './auth.service';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
+// SERVICES
+import { AuthService } from './auth.service';
+// DIRECTIVES
+import { PlaceholderDirective } from '../shared/directives/placeholder.directive';
+// COMPONENTS
+import { AlertComponent } from '../shared/components/alert/alert.component';
+// INTERFACES
+import { AuthDataResponse } from '../shared/interfaces/auth.interface';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent implements OnInit, OnDestroy {
+  @ViewChild(PlaceholderDirective) alertView: PlaceholderDirective;
+
+  private closeSub: Subscription;
   public authForm: FormGroup;
   public isLogged = true;
   public isLoading = false;
-  public errorMsg: string = null;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private componentResolver: ComponentFactoryResolver
   ) { }
 
   ngOnInit(): void {
@@ -43,15 +53,34 @@ export class AuthComponent implements OnInit {
       
       authObs.subscribe(
         response => {
-          console.warn(response)
           this.isLoading = false;
           this.router.navigate(['/recipes']);
         },
         error => {
-          this.errorMsg = error
+          this.showErrorAlert(error);
           this.isLoading = false;
         }
       );
+    }
+  }
+
+  private showErrorAlert(errorMsg: string) {
+    const alertCmpFactory = this.componentResolver.resolveComponentFactory(AlertComponent);
+    const hostViewContainer = this.alertView.viewContainerRef;
+    hostViewContainer.clear();
+
+    const alertRef = hostViewContainer.createComponent(alertCmpFactory);
+    alertRef.instance.message = errorMsg;
+
+    this.closeSub = alertRef.instance.close.subscribe(() =>{
+      this.closeSub.unsubscribe();
+      hostViewContainer.clear();
+    })
+  }
+
+  ngOnDestroy() {
+    if (this.closeSub) {
+      this.closeSub.unsubscribe()
     }
   }
 }
