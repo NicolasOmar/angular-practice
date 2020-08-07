@@ -6,10 +6,8 @@ export class AuthInterceptorService implements HttpInterceptor {
     const modifiedRequest = request.clone({
       headers: request.headers.append('Auth', 'test')
     });
-    console.warn('request body', request);
     return next.handle(modifiedRequest).pipe(tap(response => {
       if (response.type === HttpEventType.Response) {
-        console.warn('response body', response)
       }
     }));
   }

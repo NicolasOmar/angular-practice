@@ -67,25 +67,30 @@ ng serve
    - Use built-in cases like `date` or `uppercase` and configure them
    - Create a custom pipe and implement it
    - Basic understanding of handle asynchronous data with `async` pipe
- - How to make request to an API
+ - How to make requests to an API
    - Basic understanding and usage of [Firebase](firebase.google.com)
    - How to use the `HttpModule` and methods `post`, `get` and `delete`.
    - Format response data before send observable subscription using `pipe`, `map` and `tap` operators
    - Handle errors using `catchError` and `throwError` functions
    - Add `headers` and `params` values in any API call
    - Intercept API requests and responses using an `Interceptor`
-   - Handle API calls when user is reloading the page using a `Resolver`
+   - Handle API calls when the user is reloading the page using a `Resolver`
  - How to handle user authentication
-   - Use `enums` to list posible error in a file
-   - Storage session data thougt `sessionStorage`
+   - Use `enums` to list possible error in a file
+   - Storage session data thought `sessionStorage`
    - Learn more useful rxjs operators like `take`, `throwError` and `exhaustMap`
  - Load `Dynamics Components` via code (imperatively)
    - Use a `ComponentFactoryResolver` to create the component from the Typescript side
+ - How to organize app structure using Modules
+   - Understanding of `core`, `shared` and `feature module` concepts for module creation
+   - Separate routing configs in each module
+   - How to improve app performance and loading implementing `Lazy Loading`
+   - Understanding of implementation strategies for services (provide at the module level in specific cases)
  - How to use `environments variables` to store sensible keys when you deploy your app
 
-## Version (currently 0.18.0)
+## Version (currently 0.19.0)
 | Number | Meaning |
 | ------ | ------ |
 | 0 | Course hasn't been completed |
-| 18 | How many assignments/examples I have completed |
+| 19 | How many assignments/examples I have completed |
 | 0 | How many times I have updated the next assignment/example |
