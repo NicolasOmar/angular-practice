@@ -1,5 +1,5 @@
 # Angular Practice
-Repository created to record my practice learning Angular with exercises base on [Angular Course](https://www.udemy.com/course/the-complete-guide-to-angular-2/) of [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/).
+Repository created to record my practice learning Angular with exercises based on the [Udemy Course](https://www.udemy.com/course/the-complete-guide-to-angular-2/) of [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/).
 
 ## Repo Structure
 For a better search, I divided the lessons I learned in the following folders:
@@ -87,10 +87,16 @@ ng serve
    - How to improve app performance and loading implementing `Lazy Loading`
    - Understanding of implementation strategies for services (provide at the module level in specific cases)
  - How to use `environments variables` to store sensible keys when you deploy your app
+ - Make a web offline through Service Workers
 
-## Version (currently 0.19.0)
+## Version (currently v0.19.0)
 | Number | Meaning |
 | ------ | ------ |
 | 0 | Course hasn't been completed |
 | 19 | How many assignments/examples I have completed |
 | 0 | How many times I have updated the next assignment/example |
+
+## Other Practice Repos
+| Node | React | GraphQL |
+| :---: | :---: | :---: |
+| [<img src="https://cdn.svgporn.com/logos/nodejs-icon.svg" title="Node Practice Repo" alt="Node Practice Repo" width="48px">](https://github.com/NicolasOmar/node-practice) | [<img src="https://cdn.svgporn.com/logos/react.svg" title="React Practice Repo" alt="React Practice Repo" width="48px">](https://github.com/NicolasOmar/react-practice) | [<img src="https://cdn.svgporn.com/logos/graphql.svg" title="GraphQL Practice Repo" alt="GraphQL Practice Repo" width="48px">](https://github.com/NicolasOmar/graphql-practice) |
