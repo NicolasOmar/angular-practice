@@ -1,21 +1,28 @@
 # Angular Practice
 Repository created to record my practice learning Angular with exercises based on the [Udemy Course](https://www.udemy.com/course/the-complete-guide-to-angular-2/) of [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/).
 
+## Requirements
+ - [Node](https://nodejs.org/en/download/) v12.16.1 or above
+ - [Angular CLI](https://cli.angular.io/) by running the command `npm run setup-angular` or `npm i -g @angular/cli`
+
 ## Repo Structure
 For a better search, I divided the lessons I learned in the following folders:
 - `1-learning`: An app used to show every assignment and example besides the main project.
 - `2-project`: A single page application used to apply all the knowledge as the main project.
 
-## Requirements
- - [Node](https://nodejs.org/en/download/) v12.16.1 or above
- - [Angular CLI](https://cli.angular.io/) by running the command `npm run setup-angular` or `npm i -g @angular/cli`
-
 ## Setup
+After cloning the repo, go to the created folder and install the node packages (including [Angular CLI](https://cli.angular.io/) at the global level).
+```sh
+git clone https://github.com/NicolasOmar/angular-practice.git
+cd angular-practice
+npm run setup-all
+```
+`setup-all` is the command to install all the projects, but if you want to do it one by one, you can change that last line for one of the following:
 | App Setup | Command |
 | ------ | ------ |
-| All | npm run setup-all |
-| Learning | npm run setup-learning |
-| Project | npm run setup-project |
+| All | `npm run setup-all` |
+| Learning | `npm run setup-learning` |
+| Project | `npm run setup-project` |
 
 ## How to run it
 To run the app in a new browser instance, run the following command in the project's folder:
@@ -31,7 +38,7 @@ ng serve
  - Basic understanding of a `Component`
    - How to use a `Decorator` to declare a Component
    - Understand and use `String Interpolation`
- - How to use `PropertyBinding`, `DataBinding` (using in one-way or two-way) and `EventBinding`
+ - How to use `PropertyBinding`, `DataBinding` (using in one-way or two-way), and `EventBinding`
  - How to handle the DOM using `Structural Directives`
    - Handle DOM display using `ngIf`
    - Modify DOM styles using `ngStyle` and `ngClass`
@@ -70,7 +77,7 @@ ng serve
  - How to make requests to an API
    - Basic understanding and usage of [Firebase](firebase.google.com)
    - How to use the `HttpModule` and methods `post`, `get` and `delete`.
-   - Format response data before send observable subscription using `pipe`, `map` and `tap` operators
+   - Format response data before sending observable subscription using `pipe`, `map`, and `tap` operators
    - Handle errors using `catchError` and `throwError` functions
    - Add `headers` and `params` values in any API call
    - Intercept API requests and responses using an `Interceptor`
@@ -84,7 +91,7 @@ ng serve
  - How to organize app structure using Modules
    - Understanding of `core`, `shared` and `feature module` concepts for module creation
    - Separate routing configs in each module
-   - How to improve app performance and loading implementing `Lazy Loading`
+   - How to improve app performance and loading by implementing `Lazy Loading`
    - Understanding of implementation strategies for services (provide at the module level in specific cases)
  - How to use `environments variables` to store sensible keys when you deploy your app
  - Make a web offline through Service Workers
