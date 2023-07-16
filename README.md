@@ -1,11 +1,32 @@
-# Angular Practice
+# <img src="https://cdn.simpleicons.org/angular" title="Angular Practice Repo" alt="Angular Practice Repo" width="30"> Angular Practice
 Repository created to record my practice learning Angular with exercises based on the [Udemy Course](https://www.udemy.com/course/the-complete-guide-to-angular-2/) of [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/).
 
+## Table of contents
+- [Status](#status)
+- [Requirements](#requirements)
+- [Repo structure](#repo-structure)
+- [Setup](#setup)
+- [What did I learn](#what-did-i-learn)
+- [Other practice repos](#other-practice-repos)
+
+## Status
+- Current repo's version is ![Angular practice version](https://img.shields.io/github/package-json/v/nicolasomar/angular-practice?color=success&label=%20&style=flat-square)
+
+### What does that version number mean?
+| Number | Meaning |
+| ------ | ------ |
+| `X.0.0` | Course hasn't been completed |
+| `0.X.0` | How many assignments/examples I have completed |
+| `0.0.X` | How many times I have updated the next assignment/example |
+
+### Why it has not any updated dependencies?
+After finishing its related Udemy course, I archive this repository and unarchive it when I start a new training and add a link in the [`Other practice repos`](#other-practice-repos) section referring to its new repo. But I don't update any associated dependency due to technology changes during the years between each practice, and the produced code which works with the mentioned [`requirements`](#requirements).
+
 ## Requirements
- - [Node](https://nodejs.org/en/download/) v12.16.1 or above
+ - [Node](https://nodejs.org/en/download/) `v12.16.1` or above
  - [Angular CLI](https://cli.angular.io/) by running the command `npm run setup-angular` or `npm i -g @angular/cli`
 
-## Repo Structure
+## Repo structure
 For a better search, I divided the lessons I learned in the following folders:
 - `1-learning`: An app used to show every assignment and example besides the main project.
 - `2-project`: A single page application used to apply all the knowledge as the main project.
@@ -96,14 +117,7 @@ ng serve
  - How to use `environments variables` to store sensible keys when you deploy your app
  - Make a web offline through Service Workers
 
-## Version (currently ![Angular practice version](https://img.shields.io/github/package-json/v/nicolasomar/angular-practice?color=success&label=%20&style=flat-square))
-| Number | Meaning |
-| ------ | ------ |
-| 0 | Course hasn't been completed |
-| 19 | How many assignments/examples I have completed |
-| 0 | How many times I have updated the next assignment/example |
-
-## Other Practice Repos
+## Other practice repos
 | Node | React | GraphQL | Typescript | HTML & CSS |
 | :---: | :---: | :---: | :---: | :---: |
 | [<img src="https://cdn.simpleicons.org/node.js" title="Node Practice Repo" alt="Node Practice Repo" width="48px">](https://github.com/NicolasOmar/node-practice) | [<img src="https://cdn.simpleicons.org/react" title="React Practice Repo" alt="React Practice Repo" width="48px">](https://github.com/NicolasOmar/react-practice) | [<img src="https://cdn.simpleicons.org/graphql" title="GraphQL Practice Repo" alt="GraphQL Practice Repo" width="48px">](https://github.com/NicolasOmar/graphql-practice) | [<img src="https://cdn.simpleicons.org/typescript" title="Typescript Practice Repo" alt="Typescript Practice Repo" width="48px">](https://github.com/NicolasOmar/typescript-practice) | [<img src="https://cdn.simpleicons.org/html5" title="HTML and CSS Practice Repo" alt="HTML and CSS Practice Repo" width="48px">](https://github.com/NicolasOmar/html-css-practice) |
